@@ -1,0 +1,22 @@
+{
+  "name": "sphero-hack",
+  "version": "0.0.1",
+  "description": "Code Fellows 401 Project Week 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saphero/sphero-hack.git"
+  },
+  "keywords": [
+    "robotics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saphero/sphero-hack/issues"
+  },
+  "homepage": "https://github.com/saphero/sphero-hack#readme"
+}
