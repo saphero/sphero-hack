@@ -4,7 +4,7 @@ const keypress = require('keypress');
 
 module.exports = exports = () => {
   orb.connect(listen);
-  var current;
+  var speed = 200;
 
   function handle(ch, key) {
     var stop = orb.roll.bind(orb, 0, 0);
@@ -14,49 +14,62 @@ module.exports = exports = () => {
       process.exit();
     }
 
+    if (key.name === 'p') {
+      speed += 10;
+      orb.roll(speed);
+      // find max speed
+      console.log('speed up');
+    }
+
+    if (key.name === 'o') {
+      speed -= 10;
+      orb.roll(speed);
+      console.log('speed down');
+    }
+
     if (key.name === 'up' || key.name === 'w') {
-      orb.setHeading(0, function() {
-        orb.roll(200, 0, 1);
+      orb.setHeading(0, () => {
+        orb.roll(speed, 0);
         orb.randomColor();
         console.log('up');
       });
     }
 
     if (key.name === 'down' || key.name === 's') {
-      orb.setHeading(0, function() {
-        orb.roll(200, 180, 1);
+      orb.setHeading(0, () => {
+        orb.roll(speed, 180);
         orb.randomColor();
         console.log('down');
       });
     }
 
     if (key.name === 'left' || key.name === 'a') {
-      orb.setHeading(0, function() {
-        orb.roll(200, 270, 1);
+      orb.setHeading(0, () => {
+        orb.roll(speed, 270);
         orb.randomColor();
         console.log('left');
       });
     }
 
     if (key.name === 'right' || key.name === 'd') {
-      orb.setHeading(0, function() {
-        orb.roll(200, 90, 1);
+      orb.setHeading(0, () => {
+        orb.roll(speed, 90);
         orb.randomColor();
         console.log('right');
       });
     }
 
     if (key.name === 'e') {
-      orb.setHeading(0, function() {
-        orb.roll(200, 45, 1);
+      orb.setHeading(0, () => {
+        orb.roll(speed, 45);
         orb.randomColor();
         console.log('up-right');
       });
     }
 
     if (key.name === 'q') {
-      orb.setHeading(0, function() {
-        orb.roll(200, 315, 1);
+      orb.setHeading(0, () => {
+        orb.roll(speed, 315);
         orb.randomColor();
         console.log('up-left');
       });
@@ -73,7 +86,7 @@ module.exports = exports = () => {
     keypress(process.stdin);
     process.stdin.on('keypress', handle);
 
-    console.log('Control with keypress');
+    console.log('Start controlling with keypress');
 
     process.stdin.setRawMode(true);
     process.stdin.resume();
