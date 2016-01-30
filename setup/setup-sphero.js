@@ -19,11 +19,11 @@ module.exports = exports = () => {
     const spheroFile = 'tty.Sphero';
     matchy = find(spheroFile, files);
     console.log(matchy[0]);
-    var config = require('home-config').load('.spheroconfig', {
+    var config = require('home-config').load('.orbconfig', {
       Sphero_ID: matchy[0]
     });
     config.save();
     console.log('Connected to ' + config.Sphero_ID);
-    return console.log('Info saved to ~/.spheroconfig');
+    return console.log('Info saved to ~/.orbconfig');
   });
 };
