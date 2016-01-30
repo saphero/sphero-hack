@@ -17,13 +17,13 @@ module.exports = exports = () => {
       var localName = peripheral.advertisement.localName;
       console.log('BB-8 UUID - "' + deviceUUID + '" found');
       console.log('Local Name: ' + localName);
-      var config = require('home-config').load('.bb8config', {
+      var config = require('home-config').load('.orbconfig', {
         BB8_UUIsD: deviceUUID,
         BB8_LOCAL_NAME: localName
       });
       config.save();
       console.log('Connected to ' + config.BB8_LOCAL_NAME);
-      console.log('Info saved to ~/.bb8config');
+      console.log('Info saved to ~/.orbconfig');
       noble.stopScanning();
       console.log('Scanning stopped');
     } else {
