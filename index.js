@@ -21,4 +21,5 @@ switch (command) {
   default:
     console.log('Try again');
 }
+
 // logan, i know how much you like switch statements :D
