@@ -5,7 +5,6 @@
 - Minimum requirement: Bluetooth Smart Low Energy/Bluetooth 4.0 (not backwards compatible)
 - npm install
 - node index.js setupBB8
-- run the valid commands below
 
 ####sphero setup
 - Minimum requirement: Bluetooth Classic (Bluetooth 2.0/3.0)
