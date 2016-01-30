@@ -4,7 +4,7 @@ const keypress = require('keypress');
 
 module.exports = exports = () => {
   orb.connect(listen);
-  var current;
+  var speed = 200;
 
   function handle(ch, key) {
     var stop = orb.roll.bind(orb, 0, 0);
@@ -14,9 +14,21 @@ module.exports = exports = () => {
       process.exit();
     }
 
+    if (key.name === 'p') {
+      speed += 10;
+      orb.roll(speed);
+      console.log('speed up');
+    }
+
+    if (key.name === 'o') {
+      speed -= 10;
+      orb.roll(speed);
+      console.log('speed down');
+    }
+
     if (key.name === 'up' || key.name === 'w') {
       orb.setHeading(0, function() {
-        orb.roll(200, 0, 1);
+        orb.roll(speed, 0, 1);
         orb.randomColor();
         console.log('up');
       });
@@ -24,7 +36,7 @@ module.exports = exports = () => {
 
     if (key.name === 'down' || key.name === 's') {
       orb.setHeading(0, function() {
-        orb.roll(200, 180, 1);
+        orb.roll(speed, 180, 1);
         orb.randomColor();
         console.log('down');
       });
@@ -32,7 +44,7 @@ module.exports = exports = () => {
 
     if (key.name === 'left' || key.name === 'a') {
       orb.setHeading(0, function() {
-        orb.roll(200, 270, 1);
+        orb.roll(speed, 270, 1);
         orb.randomColor();
         console.log('left');
       });
@@ -40,7 +52,7 @@ module.exports = exports = () => {
 
     if (key.name === 'right' || key.name === 'd') {
       orb.setHeading(0, function() {
-        orb.roll(200, 90, 1);
+        orb.roll(speed, 90, 1);
         orb.randomColor();
         console.log('right');
       });
@@ -48,7 +60,7 @@ module.exports = exports = () => {
 
     if (key.name === 'e') {
       orb.setHeading(0, function() {
-        orb.roll(200, 45, 1);
+        orb.roll(speed, 45, 1);
         orb.randomColor();
         console.log('up-right');
       });
@@ -56,7 +68,7 @@ module.exports = exports = () => {
 
     if (key.name === 'q') {
       orb.setHeading(0, function() {
-        orb.roll(200, 315, 1);
+        orb.roll(speed, 315, 1);
         orb.randomColor();
         console.log('up-left');
       });
