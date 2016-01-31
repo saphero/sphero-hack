@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+    <button onclick='spheroSetup()'>Sphero</button>
     <button onclick='spheroConnect()'>Sphero</button>
     <button onclick='bb8Connect()'>bb8</button>
     <button onclick='lights()'>lights</button>
@@ -12,6 +13,9 @@
     <script>var socket = io.connect('http://localhost:3000');
       function sendAction(socket, actions) {
         socket.emit('robot-action', actions);
+      }
+      function spheroSetup() {
+        socket.emit('setup-sphero');
       }
       function spheroConnect() {
         socket.emit('connect-sphero');
