@@ -1,6 +1,5 @@
 const sphero = require('sphero');
 const fs = require('fs');
-var matchy;
 
 function find(key, array) {
   var results = [];
@@ -14,16 +13,15 @@ function find(key, array) {
 
 module.exports = exports = () => {
   console.log('Beginning setup');
-  fs.readdir('/dev', (err, files) => {
-    if (err) throw err;
-    const spheroFile = 'tty.Sphero';
-    matchy = find(spheroFile, files);
-    console.log(matchy[0]);
-    var config = require('home-config').load('.spheroconfig', {
-      Sphero_ID: matchy[0]
-    });
-    config.save();
-    console.log('Connected to ' + config.Sphero_ID);
-    return console.log('Info saved to ~/.spheroconfig');
+  const spheroFile = 'tty.Sphero';
+  var findFiles = fs.readdirSync('/dev');
+  console.log(findFiles);
+  var matchedFile = find(spheroFile, findFiles);
+  console.log(matchedFile[0]);
+  var config = require('home-config').load('.spheroconfig', {
+    Sphero_ID: matchedFile[0]
   });
+  config.save();
+  console.log('Connected to ' + config.Sphero_ID);
+  return console.log('Info saved to ~/.spheroconfig');
 };
