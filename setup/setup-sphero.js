@@ -16,7 +16,6 @@ module.exports = exports = () => {
   console.log('Beginning setup');
   const spheroFile = 'tty.Sphero';
   var findFiles = fs.readdirSync('/dev');
-  console.log(findFiles);
   var matchedFile = find(spheroFile, findFiles);
   console.log(matchedFile[0]);
   var config = require('home-config').load('.spheroconfig', {

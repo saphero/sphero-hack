@@ -5,27 +5,12 @@
     <title></title>
   </head>
   <body>
-    <button onclick='spheroSetup()'>Sphero</button>
-    <button onclick='spheroConnect()'>Sphero</button>
-    <button onclick='bb8Connect()'>bb8</button>
-    <button onclick='lights()'>lights</button>
+    <button id="spheroSetup">Sphero Setup</button>
+    <button id="spheroConnect">Sphero Connect</button>
+    <button id="bb8Setup">bb8 Setup</button>
+    <button id="bb8Connect">bb8 Connect</button>
+    <button id="lights">lights</button>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js'></script>
-    <script>var socket = io.connect('http://localhost:3000');
-      function sendAction(socket, actions) {
-        socket.emit('robot-action', actions);
-      }
-      function spheroSetup() {
-        socket.emit('setup-sphero');
-      }
-      function spheroConnect() {
-        socket.emit('connect-sphero');
-      }
-      function bb8Connect() {
-        socket.emit('connect-bb8');
-      }
-      function lights() {
-        socket.emit('flashingLights');
-      }
-    </script>
+    <script src='public/client-socket.js'></script>
   </body>
 </html>
