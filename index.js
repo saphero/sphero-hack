@@ -1,3 +1,5 @@
+'use strict';
+
 var command = process.argv[2];
 
 const setupBB8 = require(__dirname + '/setup/setup-bb8');
