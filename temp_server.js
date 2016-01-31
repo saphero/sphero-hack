@@ -8,7 +8,10 @@ const setupBB8 = require(__dirname + '/setup/setup-bb8');
 const setupSphero = require(__dirname + '/setup/setup-sphero');
 const connectFn = require(__dirname + '/lib/device-config');
 const lights = require(__dirname + '/commands/lights');
+const sphero = require('sphero');
+var config = require('home-config').load('.bb8config');
 var orb;
+var bb8;
 
 server.listen(3000, () => console.log('Server running on port 3000'));
 
@@ -34,13 +37,22 @@ io.on('connection', socket => {
     });
   });
   socket.on('setup-bb8', () => {
-    // setupBB8();
-    orb = connectFn.bb8Connect();
+    setupBB8(() => {
+      console.log('setup callback');
+      bb8 = connectFn.bb8Connect();
+    });
   });
   socket.on('connect-bb8', () => {
     console.log('received event');
-    orb.connect(() => {
+    bb8.on('error', (err) => {
+      console.log(err);
+    });
+    bb8.connect(() => {
+      // bb8.color("magenta");
       console.log('connected!');
+      bb8.roll(100, 0, () => {
+        console.log('performed roll');
+      });
     });
   });
   socket.on('flashingLights', () => {

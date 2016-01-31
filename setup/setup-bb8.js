@@ -1,7 +1,7 @@
 const noble = require('noble');
 const _ = require('lodash');
 
-module.exports = exports = () => {
+module.exports = exports = (callback) => {
   console.log('Beginning setup');
   noble.startScanning();
 
@@ -20,6 +20,7 @@ module.exports = exports = () => {
       console.log('Info saved to ~/.bb8config');
       noble.stopScanning();
       console.log('Scanning stopped');
+      callback();
     } else {
       console.log('Searching...');
     }
