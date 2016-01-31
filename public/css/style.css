@@ -24,3 +24,54 @@ a {
   .btn a {
     text-decoration: none;
     color: white; }
+
+#primary-nav {
+  font-family: Lato, Arial;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #234358;
+  min-width: 180px;
+  height: 100%; }
+
+.nav-brand {
+  background-color: #FFC13E;
+  padding: 10px;
+  text-align: center; }
+
+.nav-brand img {
+  height: 80px; }
+
+.nav-tabs {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0px; }
+
+.nav-tabs > li {
+  display: block;
+  position: relative; }
+
+.nav-tabs a {
+  display: block;
+  position: relative;
+  padding: 8px 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  color: white; }
+
+.nav-tabs a:hover {
+  background-color: #EBF2FC;
+  color: #234358; }
+
+.nav-tabs a:focus,
+.nav-tabs a:active {
+  background-color: #F6F9FE;
+  color: #234358; }
+
+.nav-icon {
+  height: 40px; }
+
+.nav-text {
+  display: inline-block; }
