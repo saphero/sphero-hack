@@ -7,9 +7,28 @@ $bold: 600;
 
 // Base Font(s)
 $base-font-family: sans-serif;
-$header-font-family: Arial;
+$header-font-family: Lato, Arial;
 $base-font-size: 12px;
 
 // Color Palette
-$base-color-navy: #020030;
-$base-color-white: #F4EFF7;
+$base-color-white: #F6F9FE;
+$base-color-liteblue: #EBF2FC;
+  $sec-color-liteblue: #C3DFEB;
+    $tert-color-liteblue: #A9D0DF;
+$base-color-turq: #36B4C2;
+$base-color-blue: #234358;
+
+$base-gray: #1C1D21;
+
+#app-background {
+  background-color: $base-color-white;
+  min-height: 715px;
+  text-align: center;
+}
+h1, h2 {
+  font-family: Lato;
+  color: $base-color-blue;
+}
+a {
+  text-decoration: none;
+}

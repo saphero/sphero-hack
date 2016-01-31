@@ -1,3 +1,26 @@
-#sample {
-  background-color: #020030;
-  color: #F4EFF7; }
+#app-background {
+  background-color: #F6F9FE;
+  min-height: 715px;
+  text-align: center; }
+
+h1, h2 {
+  font-family: Lato;
+  color: #234358; }
+
+a {
+  text-decoration: none; }
+
+.btn {
+  background-color: #36B4C2;
+  color: #F6F9FE;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 0; }
+  .btn:focus {
+    outline: 0; }
+  .btn:hover {
+    background-color: #6eccd7; }
+  .btn a {
+    text-decoration: none;
+    color: white; }
