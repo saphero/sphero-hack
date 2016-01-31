@@ -6,7 +6,7 @@ const mocha = require('gulp-mocha');
 const sass = require('gulp-sass');
 
 var files = ['index.js', 'gulpfile.js', './lib/*.js', './test/*.spec.js',
- '!node_modules/**', '!*.json', './views/scss/**/*.scss'];
+ '!node_modules/**', '!*.json'];
 
 gulp.task('lint', () => {
   return gulp.src(files)
@@ -15,9 +15,13 @@ gulp.task('lint', () => {
 });
 
 gulp.task('sass', () => {
-  return gulp.src('views/scss/style.scss')
+  return gulp.src('public/scss/style.scss')
     .pipe(sass())
     .pipe(gulp.dest('public/css'));
+});
+
+gulp.task('sass_watch', () => {
+  gulp.watch('./public/scss/**/*.scss', ['sass']);
 });
 
 gulp.task('mocha', () => {
