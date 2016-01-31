@@ -1,1 +1,61 @@
+#primary-nav {
+  font-family: $header-font-family;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $base-color-blue;
+  min-width: 180px;
+  height: 100%;
+}
 
+.nav-brand {
+  background-color: $base-color-yellow;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav-brand img {
+  height: 80px;
+}
+
+.nav-tabs {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.nav-tabs>li {
+  display: block;
+  position: relative;
+}
+
+.nav-tabs a {
+  display: block;
+  position: relative;
+  padding: 8px 15px;
+
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.nav-tabs a:hover {
+  background-color: $base-color-liteblue;
+  color: $base-color-blue;
+}
+
+.nav-tabs a:focus,
+.nav-tabs a:active {
+  background-color: $base-color-white;
+  color: $base-color-blue;
+}
+
+.nav-icon {
+  height: 40px;
+}
+
+.nav-text {
+  display: inline-block;
+}
