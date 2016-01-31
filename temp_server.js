@@ -21,11 +21,19 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', socket => {
-  socket.on('connect-sphero', () => {
+  socket.on('setup-sphero', () => {
     setupSphero();
     orb = connectFn.spheroConnect();
   });
-  socket.on('connect-bb8', () => {
+  socket.on('connect-sphero', () => {
+    orb.connect(() => {
+      console.log('connected!');
+      orb.roll(100, 0, () => {
+        console.log('performed roll');
+      });
+    });
+  });
+  socket.on('setup-bb8', () => {
     setupBB8();
     orb = connectFn.bb8Connect();
   });

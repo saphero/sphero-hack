@@ -1,4 +1,5 @@
-const sphero = require('sphero');
+'use strict';
+
 const fs = require('fs');
 
 function find(key, array) {
@@ -22,6 +23,5 @@ module.exports = exports = () => {
     Sphero_ID: matchedFile[0]
   });
   config.save();
-  console.log('Connected to ' + config.Sphero_ID);
   return console.log('Info saved to ~/.spheroconfig');
 };
