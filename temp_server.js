@@ -34,8 +34,14 @@ io.on('connection', socket => {
     });
   });
   socket.on('setup-bb8', () => {
-    setupBB8();
+    // setupBB8();
     orb = connectFn.bb8Connect();
+  });
+  socket.on('connect-bb8', () => {
+    console.log('received event');
+    orb.connect(() => {
+      console.log('connected!');
+    });
   });
   socket.on('flashingLights', () => {
     lights(orb);

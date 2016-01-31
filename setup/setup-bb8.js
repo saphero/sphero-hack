@@ -3,15 +3,7 @@ const _ = require('lodash');
 
 module.exports = exports = () => {
   console.log('Beginning setup');
-
-  noble.on('stateChange', (state) => {
-    if (state === 'poweredOn') {
-      console.log('Starting search');
-      noble.startScanning();
-    } else {
-      console.log('Cannot start search - turn on bluetooth');
-    }
-  });
+  noble.startScanning();
 
   noble.on('discover', (peripheral) => {
     if (_.includes(peripheral.advertisement.localName, 'BB-')) {
