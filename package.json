@@ -1,0 +1,57 @@
+{
+  "name": "sphero-hack",
+  "version": "1.0.0",
+  "description": "Code Fellows 401 Project Week 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saphero/sphero-hack.git"
+  },
+  "keywords": [
+    "robotics",
+    "sphero",
+    "bb8",
+    "bb-8",
+    "orbotix",
+    "hack",
+    "robot",
+    "robots",
+    "spherojs",
+    "sphero-js",
+    "ollie",
+    "sprk"
+  ],
+  "author": [
+    "Natalie Chow",
+    "Sabrina Tee",
+    "Logan Tegman",
+    "Jose Tello",
+    "Jesse Thach"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saphero/sphero-hack/issues"
+  },
+  "homepage": "https://github.com/saphero/sphero-hack#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "home-config": "^0.1.0",
+    "jade": "^1.11.0",
+    "keypress": "^0.2.1",
+    "lodash": "^4.1.0",
+    "noble": "^1.3.0",
+    "serialport": "^2.0.6",
+    "socket.io": "^1.4.5",
+    "sphero": "^0.8.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-sass": "^2.1.1",
+    "mocha": "^2.4.5"
+  }
+}
