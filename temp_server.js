@@ -11,7 +11,6 @@ const lights = require(__dirname + '/commands/lights');
 const sphero = require('sphero');
 var config = require('home-config').load('.bb8config');
 var orb;
-var bb8;
 
 server.listen(3000, () => console.log('Server running on port 3000'));
 
@@ -28,6 +27,7 @@ io.on('connection', socket => {
     setupSphero();
     orb = connectFn.spheroConnect();
   });
+
   socket.on('connect-sphero', () => {
     orb.connect(() => {
       console.log('connected!');
@@ -36,31 +36,29 @@ io.on('connection', socket => {
       });
     });
   });
+
   socket.on('setup-bb8', () => {
     setupBB8(() => {
       console.log('setup callback');
-      bb8 = connectFn.bb8Connect();
+      orb = connectFn.bb8Connect();
     });
   });
+
   socket.on('connect-bb8', () => {
     console.log('received event');
-    bb8.on('error', (err) => {
-      console.log(err);
-    });
-    bb8.connect(() => {
-      // bb8.color("magenta");
+    orb.connect(() => {
       console.log('connected!');
-      bb8.roll(100, 0, () => {
+      orb.roll(100, 0, () => {
         console.log('performed roll');
       });
     });
   });
+
   socket.on('flashingLights', () => {
     lights(orb);
   });
+
   socket.on('robot-action', () => {
-
-
     // Send generic command to sphero
     // orb[opts.type].apply(orb, [...opts.args,
     //   () => event.sender.send('performed action: ' + opts.type)]);
