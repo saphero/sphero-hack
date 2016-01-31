@@ -1,10 +1,11 @@
 const orb = require(__dirname + '/../lib/device-config')();
-const config = require(__dirname + '/../lib/device-config').uuid;
 const keypress = require('keypress');
 
 module.exports = exports = () => {
   orb.connect(listen);
   var speed = 200;
+  var max = 250;
+  var min = 10;
 
   function handle(ch, key) {
     var stop = orb.roll.bind(orb, 0, 0);
@@ -15,13 +16,14 @@ module.exports = exports = () => {
     }
 
     if (key.name === 'p') {
+      if (speed === 250) return console.log('at max speed');
       speed += 10;
       orb.roll(speed);
-      // find max speed
       console.log('speed up');
     }
 
     if (key.name === 'o') {
+      if (speed === 10) return console.log('at min speed');
       speed -= 10;
       orb.roll(speed);
       console.log('speed down');
