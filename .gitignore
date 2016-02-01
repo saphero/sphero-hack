@@ -3,3 +3,4 @@
 .DS_Store
 **/*.log
 db/
+/public/css/style.css
