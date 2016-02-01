@@ -50,9 +50,9 @@ a {
       letter-spacing: 0.5px;
       color: white; }
       #primary-nav .nav-tabs a:hover {
-        background-color: #EBF2FC;
+        background-color: #C3DFEB;
         color: #234358; }
-      #primary-nav .nav-tabs a:focus, #primary-nav .nav-tabs a:active {
+      #primary-nav .nav-tabs a:focus, #primary-nav .nav-tabs a:active, #primary-nav .nav-tabs a.active {
         background-color: #F6F9FE;
         color: #234358; }
     #primary-nav .nav-tabs .nav-brand {
@@ -60,6 +60,9 @@ a {
       padding: 10px;
       text-align: center; }
       #primary-nav .nav-tabs .nav-brand img {
-        height: 80px; }
+        height: 90px; }
     #primary-nav .nav-tabs .nav-icon {
-      height: 40px; }
+      height: 36px; }
+    #primary-nav .nav-tabs .row div:first-child {
+      text-align: right;
+      padding-right: 4px; }
