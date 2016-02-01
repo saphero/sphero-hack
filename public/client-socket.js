@@ -4,8 +4,6 @@
 var socket = io.connect('http://localhost:3000');
 /* eslint-enable no-undef */
 
-document.getElementById('spheroSetup').onclick =
-  () => socket.emit('setup-sphero');
 document.getElementById('spheroConnect').onclick =
   () => socket.emit('connect-sphero');
 document.getElementById('bb8Setup').onclick = () => socket.emit('setup-bb8');
