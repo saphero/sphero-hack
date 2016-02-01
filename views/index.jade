@@ -1,5 +1,6 @@
 include ./partials/_layout
 include ./partials/_navigation
+
 #app-background.row
     .col-md-6
         .box
@@ -8,4 +9,6 @@ include ./partials/_navigation
     .col-md-6
         .box
           h2 Sample Header
-          button.btn Sample Button
+          input.btn(type='button', value='clickme', onclick='swal()')
+
+include ./partials/_modal

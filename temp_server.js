@@ -34,7 +34,6 @@ io.on('connection', socket => {
   });
   socket.on('robot-action', () => {
 
-
     // Send generic command to sphero
     // orb[opts.type].apply(orb, [...opts.args,
     //   () => event.sender.send('performed action: ' + opts.type)]);
