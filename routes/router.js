@@ -9,3 +9,7 @@ Router.get('/', (req, res) => {
 Router.get('/about', (req, res) => {
   res.render('about');
 });
+
+Router.get('/color', (req, res) => {
+  res.render('color');
+});

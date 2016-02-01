@@ -1,11 +1,21 @@
 #app-background {
-  background-color: #F6F9FE;
   min-height: 715px;
   text-align: center; }
 
-h1, h2 {
+body {
+  background-color: #F6F9FE; }
+
+.content {
+  margin-left: 190px; }
+
+h1, h2, h3 {
   font-family: Lato;
   color: #234358; }
+
+h4 {
+  font-family: Lato;
+  color: #5D6160;
+  font-weight: normal; }
 
 a {
   text-decoration: none; }
@@ -66,3 +76,92 @@ a {
     #primary-nav .nav-tabs .row div:first-child {
       text-align: right;
       padding-right: 4px; }
+
+#color_squares {
+  padding-right: 24px; }
+
+.palette {
+  font-family: Lato, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  padding: 18px 3px;
+  border: 3px solid #F6F9FE;
+  border-radius: 1px;
+  cursor: pointer; }
+  .palette.dark-text {
+    color: #5D6160; }
+
+#hsv_map {
+  height: 300px;
+  position: relative; }
+  #hsv_map .cover {
+    opacity: 0;
+    background-color: #000;
+    position: absolute;
+    top: 0px;
+    bottom: -1px;
+    left: 0px;
+    border-radius: 50%;
+    cursor: crosshair;
+    width: 300px; }
+  #hsv_map .bar-bg, #hsv_map .bar-white {
+    position: absolute;
+    top: 0;
+    left: 320px;
+    width: 25px;
+    height: 300px; }
+  #hsv_map .bar-white {
+    background-color: #fff; }
+  #hsv_map .hsv-cursor {
+    position: absolute;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    width: 9px;
+    height: 9px;
+    cursor: default;
+    margin: -5px;
+    cursor: crosshair; }
+    #hsv_map .hsv-cursor .dark {
+      border-color: #333; }
+    #hsv_map .hsv-cursor .no-cursor {
+      cursor: none; }
+  #hsv_map #luminanceBar {
+    position: absolute;
+    top: 0;
+    left: 320px; }
+  #hsv_map #hsv_cursors {
+    position: absolute;
+    top: 0;
+    left: 320px;
+    width: 25px;
+    height: 300px;
+    overflow: hidden; }
+  #hsv_map .hsv-barcursor-l, #hsv_map .hsv-barcursor-r {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    margin-top: -4px; }
+  #hsv_map .hsv-barcursor-l {
+    left: 0;
+    border-left: 4px solid #eee; }
+  #hsv_map .dark .hsv-barcursor-l {
+    border-left-color: #333; }
+  #hsv_map .hsv-barcursor-r {
+    right: 0;
+    border-right: 4px solid #eee; }
+  #hsv_map .dark .hsv-barcursor-r {
+    border-right-color: #333; }
+
+#testPatch {
+  font-family: Lato, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  width: 300px;
+  cursor: default;
+  padding: 18px 3px;
+  margin-top: 12px; }
