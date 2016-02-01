@@ -1,0 +1,54 @@
+include ./partials/_layout
+include ./partials/_navigation
+
+.row.content
+  .col-xs-12
+    h1 Color Picker
+  .col-md-6
+    h4 Preset colors
+    #color_squares.row
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+      .col-xs-3.col-sm-2.col-md-3.palette
+
+  .col-md-6
+    h4 Custom color
+    #hsv_map
+      canvas#surface(width='300', height='300')
+      .cover
+      .hsv-cursor
+      .bar-bg
+      .bar-white
+      canvas#luminanceBar(width='25', height='300')
+      #hsv_cursors.hsv-barcursors
+        .hsv-barcursor-l
+        .hsv-barcursor-r
+    #testPatch.col-xs-12 .
+
+  
+script(type='text/javascript', src='static/vendor/js/colors.js')
+script(type='text/javascript', src='static/vendor/js/colorPicker.js')
+script(type='text/javascript', src='static/vendor/js/hsvPicker.js')
+
+script(type='text/javascript', src='static/js/choose-color.js')
