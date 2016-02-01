@@ -10,6 +10,7 @@ const connectFn = require(__dirname + '/lib/device-config');
 const lights = require(__dirname + '/commands/lights');
 const Router = require(__dirname + '/routes/router');
 var orb;
+const setupSocketListeners = require(__dirname + '/lib/setup-socket-listeners');
 
 server.listen(3000, () => console.log('Server running on port 3000'));
 
@@ -38,3 +39,6 @@ io.on('connection', socket => {
     //   () => event.sender.send('performed action: ' + opts.type)]);
   });
 });
+
+// Creates all socket.io event listeners
+setupSocketListeners(io);
