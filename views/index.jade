@@ -1,7 +1,7 @@
 include ./partials/_layout
 include ./partials/_navigation
 
-#app-background.row
+#app-background.row.content
     .col-md-6
         .box
           h2 Sample Header
@@ -9,6 +9,6 @@ include ./partials/_navigation
     .col-md-6
         .box
           h2 Sample Header
-          input.btn(type='button', value='clickme', onclick='swal()')
+          input.btn(id='modal-test', type='button', value='clickme', onclick='swal()')
 
 include ./partials/_modal
