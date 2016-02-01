@@ -1,7 +1,8 @@
 #app-background {
   background-color: #F6F9FE;
   min-height: 715px;
-  text-align: center; }
+  text-align: center;
+  padding-left: 180px; }
 
 h1, h2 {
   font-family: Lato;
@@ -66,3 +67,7 @@ a {
     #primary-nav .nav-tabs .row div:first-child {
       text-align: right;
       padding-right: 4px; }
+
+img.team-img {
+  border-radius: 50%;
+  max-height: 200px; }
