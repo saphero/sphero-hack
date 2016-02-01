@@ -7,7 +7,7 @@ module.exports = exports = () => {
   const spheroFile = 'tty.Sphero';
   fs.readdir('/dev', (err, files) => {
     if (err) return console.log(err);
-    files.filter(file => file.indexOf(spheroFile === 0));
+    files.filter(file => file.indexOf(spheroFile) === 0);
     /* eslint-disable camelcase */
     const config = require('home-config').load('.spheroconfig', {
       Sphero_ID: files[0]
