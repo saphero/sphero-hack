@@ -1,5 +1,6 @@
 include ./partials/_layout
 include ./partials/_navigation
+
 #app-background.row
     .col-md-6
         .box
@@ -8,7 +9,6 @@ include ./partials/_navigation
     .col-md-6
         .box
           h2 Sample Header
-          button.btn Sample Button
+          input.btn(type='button', value='clickme', onclick='swal()')
 
-script(type='text/javascript', src='https://code.jquery.com/jquery-2.2.0.min.js')
-script(type='text/javascript', src='static/js/handle-nav.js')
+include ./partials/_modal
