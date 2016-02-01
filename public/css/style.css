@@ -1,3 +1,68 @@
-#sample {
-  background-color: #020030;
-  color: #F4EFF7; }
+#app-background {
+  background-color: #F6F9FE;
+  min-height: 715px;
+  text-align: center; }
+
+h1, h2 {
+  font-family: Lato;
+  color: #234358; }
+
+a {
+  text-decoration: none; }
+
+.btn {
+  background-color: #36B4C2;
+  color: #F6F9FE;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 0; }
+  .btn:focus {
+    outline: 0; }
+  .btn:hover {
+    background-color: #6eccd7; }
+  .btn a {
+    text-decoration: none;
+    color: white; }
+
+#primary-nav {
+  font-family: Lato, Arial;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #234358;
+  min-width: 180px;
+  height: 100%; }
+  #primary-nav .nav-tabs {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0px; }
+    #primary-nav .nav-tabs > li {
+      display: block;
+      position: relative; }
+    #primary-nav .nav-tabs a {
+      display: block;
+      position: relative;
+      padding: 8px 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      color: white; }
+      #primary-nav .nav-tabs a:hover {
+        background-color: #C3DFEB;
+        color: #234358; }
+      #primary-nav .nav-tabs a:focus, #primary-nav .nav-tabs a:active, #primary-nav .nav-tabs a.active {
+        background-color: #F6F9FE;
+        color: #234358; }
+    #primary-nav .nav-tabs .nav-brand {
+      background-color: #FFC13E;
+      padding: 10px;
+      text-align: center; }
+      #primary-nav .nav-tabs .nav-brand img {
+        height: 90px; }
+    #primary-nav .nav-tabs .nav-icon {
+      height: 36px; }
+    #primary-nav .nav-tabs .row div:first-child {
+      text-align: right;
+      padding-right: 4px; }

@@ -1,4 +1,51 @@
-#sample {
-  background-color: $base-color-navy;
-  color: $base-color-white;
+#primary-nav {
+  font-family: $header-font-family;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $base-color-blue;
+  min-width: 180px;
+  height: 100%;
+  .nav-tabs {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0px;
+    > li {
+      display: block;
+      position: relative;
+    }
+    a {
+      display: block;
+      position: relative;
+      padding: 8px 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      color: white;
+      &:hover {
+        background-color: $sec-color-liteblue;
+        color: $base-color-blue;
+      }
+      &:focus, &:active, &.active {
+        background-color: $base-color-white;
+        color: $base-color-blue;
+      }
+    }
+    .nav-brand {
+      background-color: $base-color-yellow;
+      padding: 10px;
+      text-align: center;
+      img {
+        height: 90px;
+      }
+    }
+    .nav-icon {
+      height: 36px;
+    }
+    .row div:first-child {
+      text-align: right;
+      padding-right: 4px;
+    }
+  }
 }
