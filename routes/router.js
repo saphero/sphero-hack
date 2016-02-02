@@ -13,3 +13,7 @@ Router.get('/about', (req, res) => {
 Router.get('/color', (req, res) => {
   res.render('color');
 });
+
+Router.get('/move', (req, res) => {
+  res.render('move');
+});
