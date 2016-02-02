@@ -9,10 +9,13 @@ const setupSphero = require(__dirname + '/setup/setup-sphero');
 const connectFn = require(__dirname + '/lib/device-config');
 const lights = require(__dirname + '/commands/lights');
 const Router = require(__dirname + '/routes/router');
-var orb;
 const setupSocketListeners = require(__dirname + '/lib/setup-socket-listeners');
+var orb;
 
-server.listen(3000, () => console.log('Server running on port 3000'));
+var serverInst = app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+module.exports = exports = serverInst;
 
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
