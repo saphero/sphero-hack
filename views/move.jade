@@ -18,16 +18,16 @@ script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/socke
       .ctrl-wrapper.row
         .col-xs-6
           h4 Direction
-          button.ctrl-btn ^
+          button#up-btn.ctrl-btn ^
           .col-xs-12.col-sm.col-md.col-lg
             .btn-wrapper
-              button.ctrl-btn <
-              button#center-btn.ctrl-btn v
-              button.ctrl-btn >
+              button#left-btn.ctrl-btn <
+              button#down-btn.ctrl-btn v
+              button#right-btn.ctrl-btn >
         .col-xs-6
           .col-xs-12.col-sm.col-md.col-lg
             h4 Speed
-            button#left-btn.ctrl-btn O
-            button.ctrl-btn P
+            button#slow-btn.ctrl-btn O
+            button#fast-btn.ctrl-btn P
             
 script(type='text/javascript', src='static/js/motion-socket.js')
