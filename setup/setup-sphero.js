@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-module.exports = exports = () => {
+module.exports = exports = (cb) => {
   console.log('Beginning setup');
   const spheroFile = 'tty.Sphero';
   fs.readdir('/dev', (err, files) => {
@@ -14,6 +14,7 @@ module.exports = exports = () => {
     });
     /* eslint-enable camelcase */
     config.save();
-    return console.log('Info saved to ~/.spheroconfig');
+    console.log('Info saved to ~/.spheroconfig');
+    cb();
   });
 };
