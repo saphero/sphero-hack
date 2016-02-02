@@ -23,6 +23,11 @@ $base-color-slate: #BCBDC1;
     $tert-color-slate: #5D6160;
 $base-gray: #1C1D21;
 
+#app-background {
+  min-height: 715px;
+  text-align: center;
+  padding-left: 180px;
+}
 body {
   background-color: $base-color-white;
 }
