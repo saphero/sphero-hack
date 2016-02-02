@@ -1,0 +1,29 @@
+@mixin btn($color: blue) {
+  background-color: $color;
+  color: $base-color-white;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 0;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    background-color: lighten($color, 15%);
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.btn {
+  @include btn($base-color-turq);
+}
+
+.ctrl-btn {
+  @include btn($base-color-turq);
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+}

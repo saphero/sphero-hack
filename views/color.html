@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sphero Hack</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  </head>
+  <body></body>
+</html>
+<nav id="primary-nav">
+  <ul class="nav-tabs">
+    <li class="nav-brand"><img src="static/img/brand-logo.svg" alt="Saphero"></li>
+    <li><a href="#" class="active">
+        <div class="row middle-xs">
+          <div class="col-xs-4"><img src="static/img/icons/bluetooth_blue.svg" alt="Connect" class="nav-icon"></div>
+          <div class="col-xs-8">Connect</div>
+        </div></a></li>
+    <li><a href="#">
+        <div class="row middle-xs">
+          <div class="col-xs-4"><img src="static/img/icons/controller.svg" alt="Move" class="nav-icon"></div>
+          <div class="col-xs-8">Move</div>
+        </div></a></li>
+    <li><a href="#">
+        <div class="row middle-xs">
+          <div class="col-xs-4"><img src="static/img/icons/dropper.svg" alt="Colors" class="nav-icon"></div>
+          <div class="col-xs-8">Colors</div>
+        </div></a></li>
+    <li><a href="#">
+        <div class="row middle-xs">
+          <div class="col-xs-4"><img src="static/img/icons/settings.svg" alt="Settings" class="nav-icon"></div>
+          <div class="col-xs-8">Settings</div>
+        </div></a></li>
+    <li><a href="#">
+        <div class="row middle-xs">
+          <div class="col-xs-4"><img src="static/img/icons/about.svg" alt="About" class="nav-icon"></div>
+          <div class="col-xs-8">About</div>
+        </div></a></li>
+  </ul>
+</nav>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="static/js/handle-nav.js"></script>
+<div class="row content">
+  <div class="col-xs-12">
+    <h1>Color Picker</h1>
+  </div>
+  <div class="col-md-6">
+    <h4>Preset colors</h4>
+    <div id="color_squares" class="row">
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+      <div class="col-xs-3 col-sm-2 col-md-3 palette"></div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Custom color</h4>
+    <div id="hsv_map">
+      <canvas id="surface" width="300" height="300"></canvas>
+      <div class="cover"></div>
+      <div class="hsv-cursor"></div>
+      <div class="bar-bg"></div>
+      <div class="bar-white"></div>
+      <canvas id="luminanceBar" width="25" height="300"></canvas>
+      <div id="hsv_cursors" class="hsv-barcursors">
+        <div class="hsv-barcursor-l"></div>
+        <div class="hsv-barcursor-r"></div>
+      </div>
+    </div>
+    <div id="testPatch" class="col-xs-12">.</div>
+  </div>
+</div>
+<script type="text/javascript" src="static/vendor/js/colors.js"></script>
+<script type="text/javascript" src="static/vendor/js/colorPicker.js"></script>
+<script type="text/javascript" src="static/vendor/js/hsvPicker.js"></script>
+<script type="text/javascript" src="static/js/choose-color.js"></script>
+<script type="text/javascript" src="static/js/color-socket.js"></script>

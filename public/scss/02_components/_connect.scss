@@ -1,0 +1,18 @@
+.connect-panel {
+  text-align: center;
+  img {
+    display: block;
+    margin: 0px auto 20px auto;
+    max-width: 200px;
+  }
+  button.btn, input.btn {
+    min-width: 100px;
+  }
+}
+.connect-req {
+  color: $tert-color-slate;
+  li {
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+}

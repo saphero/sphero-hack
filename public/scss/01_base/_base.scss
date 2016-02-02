@@ -1,0 +1,55 @@
+// BASE STYLES FOR SCAFFOLDING
+
+// Font Weights
+$light: 100;
+$regular: 400;
+$bold: 600;
+
+// Base Font(s)
+$base-font-family: sans-serif;
+$header-font-family: Lato, Arial;
+$base-font-size: 12px;
+
+// Color Palette
+$base-color-white: #F6F9FE;
+$base-color-liteblue: #EBF2FC;
+  $sec-color-liteblue: #C3DFEB;
+    $tert-color-liteblue: #A9D0DF;
+$base-color-turq: #36B4C2;
+$base-color-blue: #234358;
+$base-color-yellow: #FFC13E;
+$base-color-slate: #BCBDC1;
+  $sec-color-slate: #7F8082;
+    $tert-color-slate: #5D6160;
+$base-gray: #1C1D21;
+
+#app-background {
+  min-height: 715px;
+  text-align: center;
+  padding-left: 180px;
+}
+body {
+  background-color: $base-color-white;
+}
+.content {
+  margin-left: 190px;
+}
+h1, h2, h3 {
+  font-family: Lato;
+  color: $base-color-blue;
+}
+h4 {
+  font-family: Lato;
+  color: $tert-color-slate;
+  font-weight: normal;
+}
+a {
+  text-decoration: none;
+}
+.page-header {
+  font-family: Lato;
+  color: $base-color-blue;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+}
