@@ -1,4 +1,5 @@
 'use strict';
+var socket = io.connect('http://localhost:3000');
 
 var defaultColor = '#ff0000';
 var presetColors = [
