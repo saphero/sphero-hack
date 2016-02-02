@@ -20,3 +20,10 @@
 .btn {
   @include btn($base-color-turq);
 }
+
+.ctrl-btn {
+  @include btn($base-color-turq);
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+}
