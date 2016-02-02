@@ -3,41 +3,49 @@
 /* eslint-disable no-undef */
 var socket = io.connect('http://localhost:3000');
 /* eslint-enable no-undef */
-
-document.getElementById('lights')
-  .onclick = () => socket.emit('flashing-lights');
-document.getElementById('keyboardControls').onclick = toggleKeyControls();
+var resetHeading = true;
+toggleKeyControls();
 
 function toggleKeyControls() {
-  if (!window.onkeydown) {
-    window.onkeydown = e => {
-      switch (e.keyCode) {
-        case 32:
-          socket.emit('roll', 'stop');
-          break;
-        case 37:
-          socket.emit('roll', 'left');
-          break;
-        case 38:
-          socket.emit('roll', 'up');
-          break;
-        case 39:
-          socket.emit('roll', 'right');
-          break;
-        case 40:
-          socket.emit('roll', 'down');
-          break;
-        case 79:
-          socket.emit('speed', 'down');
-          break;
-        case 80:
-          socket.emit('speed', 'up');
-          break;
-        default:
-          // do nothing
-      }
-    };
-  } else {
-    window.onkeydown = null;
-  }
+  window.onkeydown = e => {
+    switch (e.keyCode) {
+      case 37:
+        socket.emit('roll', {direction: 'left', resetHeading});
+        highlightBtn('#left-btn');
+        break;
+      case 38:
+        socket.emit('roll', {direction: 'up', resetHeading});
+        highlightBtn('#up-btn');
+        break;
+      case 39:
+        socket.emit('roll', {direction: 'right', resetHeading});
+        highlightBtn('#right-btn');
+        break;
+      case 40:
+        socket.emit('roll', {direction: 'down', resetHeading});
+        highlightBtn('#down-btn');
+        break;
+      case 79:
+        socket.emit('speed', 'down');
+        highlightBtn('#slow-btn');
+        break;
+      case 80:
+        socket.emit('speed', 'up');
+        highlightBtn('#fast-btn');
+        break;
+      default:
+    }
+  resetHeading = false;
+  };
+  window.onkeyup = () => {
+    socket.emit('roll', {direction: 'stop'});
+    resetHeading = true;
+  };
+}
+
+function highlightBtn(btnId) {
+  $(btnId).addClass('active-btn');
+  setTimeout(() => {
+    $(btnId).removeClass('active-btn');
+  }, 150);
 }
