@@ -23,11 +23,6 @@ $base-color-slate: #BCBDC1;
     $tert-color-slate: #5D6160;
 $base-gray: #1C1D21;
 
-#app-background {
-  min-height: 715px;
-  text-align: center;
-  padding-left: 180px;
-}
 body {
   background-color: $base-color-white;
 }
@@ -45,4 +40,11 @@ h4 {
 }
 a {
   text-decoration: none;
+}
+.page-header {
+  font-family: Lato;
+  color: $base-color-blue;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
 }

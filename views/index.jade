@@ -1,14 +1,26 @@
 include ./partials/_layout
 include ./partials/_navigation
 
-#app-background.row.content
-    .col-md-6
-        .box
-          h2 Sample Header
-          button.btn Sample Button
-    .col-md-6
-        .box
-          h2 Sample Header
-          input.btn(id='modal-test', type='button', value='clickme', onclick='swal()')
+.content
+  h1.page-header Is this the droid you're looking for?
+  .row.bottom-xs
+    .col-sm-4.col-sm-offset-2.connect-panel
+      img(src='static/img/bb8.svg')
+      input.btn(id='connect-btn-bb8', type='button', value='BB-8/Ollie')
+    .col-sm-4.connect-panel
+      img(src='static/img/sprk.svg')
+      input.btn(id='connect-btn-sprk', type='button', value='SPRK')
+
+  .row
+    .col-sm-4.col-sm-offset-2
+      ul.connect-req
+        li this thing needs to work
+        li check this check that check check check everything
+        li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    .col-sm-4
+      ul.connect-req
+        li this thing works
+        li check this check that check check check everything
+        li Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 include ./partials/_modal
