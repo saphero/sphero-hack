@@ -5,7 +5,6 @@ const app = express();
 const Router = require(__dirname + '/routes/router');
 const setupSocketListeners = require(__dirname + '/lib/setup-socket-listeners');
 
-
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
