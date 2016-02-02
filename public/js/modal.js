@@ -1,3 +1,5 @@
+'use strict';
+
 $('#connect-btn-bb8').on('click', () => {
   console.log('connecting to bb8');
 });
