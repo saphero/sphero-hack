@@ -61,3 +61,13 @@ socket.on('speedometer', (data) => {
     }
   });
 });
+socket.on('accelerometer', (data) => {
+  $.plot($('#accel_graph'), data, {
+    yaxis: {
+      min: 0
+    },
+    xaxis: {
+      show: false
+    }
+  });
+});
