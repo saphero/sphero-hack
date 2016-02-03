@@ -8,8 +8,9 @@ document.getElementById('connect-btn-sprk')
   .onclick = () => socket.emit('connect-btn-sprk');
 // document.getElementById('disconnect')
 //   .onclick = () => socket.emit('disconnect');
-// document.getElementById('bb8Setup').onclick = () => socket.emit('setup-bb8');
-// document.getElementById('bb8Create')
+document.getElementById('connect-btn-bb8')
+  .onclick = () => socket.emit('connect-btn-bb8');
+// document.getElementById('bb8Connect')
 //   .onclick = () => socket.emit('connect-bb8');
 
 /* ----- can i just register an event here? ----- */
