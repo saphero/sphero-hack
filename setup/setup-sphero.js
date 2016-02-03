@@ -7,10 +7,10 @@ module.exports = exports = (cb) => {
   const spheroFile = 'tty.Sphero';
   fs.readdir('/dev', (err, files) => {
     if (err) return console.log(err);
-    files.filter(file => file.indexOf(spheroFile) === 0);
+    var matchy = files.filter(file => file.indexOf(spheroFile) === 0);
     /* eslint-disable camelcase */
     const config = require('home-config').load('.spheroconfig', {
-      SPHERO_ID: files[0]
+      SPHERO_ID: matchy[0]
     });
     /* eslint-enable camelcase */
     config.save();
