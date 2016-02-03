@@ -6,12 +6,21 @@ script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/socke
 .content
   h1.page-header Is this the droid you're looking for?
   .row.bottom-xs
-    .col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-4.connect-panel
+    .col-sm-6.col-md-4.col-md-offset-2.connect-panel
+      img(src='static/img/bb8.svg')
+      input.btn.shading(id='connect-btn-bb8', type='button', value='BB-8/Ollie')
+    .col-sm-6.col-md-4.connect-panel
       img(src='static/img/sprk.svg')
       input.btn.shading(id='connect-btn-sprk', type='button', value='Sphero/SPRK')
+      
+  .row
+    .col-sm-6.col-md-4.col-md-offset-2
+      ul.connect-req
+        li bb8bb8bb8bb8bb8
+    .col-sm-6.col-md-4
       ul.connect-req
         li Supported models: Sphero 1.0/2.0 or SPRK
-        li System requirement: computer with Bluetooth Classic (Bluetooth&nbsp;2.0/3.0) support
+        li System requirement: Mac with Bluetooth Classic (Bluetooth&nbsp;2.0/3.0) support
         li Make sure Sphero/SPRK is paired via Bluetooth
 
 script(type='text/javascript', src='static/js/setup-socket.js')
