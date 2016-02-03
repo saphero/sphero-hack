@@ -7,22 +7,22 @@ var resetHeading = true;
 toggleKeyControls();
 
 function toggleKeyControls() {
-  window.onkeydown = e => {
+  window.onkeydown = (e) => {
     switch (e.keyCode) {
       case 37:
-        socket.emit('roll', {direction: 'left', resetHeading});
+        socket.emit('roll', { direction: 'left', resetHeading });
         highlightBtn('#left-btn');
         break;
       case 38:
-        socket.emit('roll', {direction: 'up', resetHeading});
+        socket.emit('roll', { direction: 'up', resetHeading });
         highlightBtn('#up-btn');
         break;
       case 39:
-        socket.emit('roll', {direction: 'right', resetHeading});
+        socket.emit('roll', { direction: 'right', resetHeading });
         highlightBtn('#right-btn');
         break;
       case 40:
-        socket.emit('roll', {direction: 'down', resetHeading});
+        socket.emit('roll', { direction: 'down', resetHeading });
         highlightBtn('#down-btn');
         break;
       case 79:
@@ -38,7 +38,7 @@ function toggleKeyControls() {
   resetHeading = false;
   };
   window.onkeyup = () => {
-    socket.emit('roll', {direction: 'stop'});
+    socket.emit('roll', { direction: 'stop' });
     resetHeading = true;
   };
 }
