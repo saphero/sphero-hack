@@ -30,17 +30,21 @@ Or clone directly from Github: [https://github.com/saphero/sphero-hack](https://
 ### Routes
 Device setup and connection page:
 ```
-localhost:3000```
+localhost:3000
+```
 Game controller and keypress control:
 ```
-/move```
+/move
+```
 Preset colors and color picker:
 ```
-/color```
+/color
+```
 
 About the contributors:
 ```
-/about```
+/about
+```
 
 ### Acknowledgements & Modules Used
 - [express](https://www.npmjs.com/package/express)
