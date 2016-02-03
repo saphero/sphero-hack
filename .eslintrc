@@ -112,7 +112,7 @@
     "no-mixed-requires": 2,
     "no-new-require": 2,
     "no-path-concat": 0,
-    "no-process-exit": 2,
+    "no-process-exit": 0,
     "no-restricted-modules": 0,
     "no-sync": 1,
 
@@ -222,6 +222,10 @@
     "no-unneeded-ternary": [
       2,
       { "defaultAssignment": false }
+    ],
+    "arrow-parens": [
+      2,
+      "always"
     ]
   }
 }

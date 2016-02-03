@@ -12,7 +12,7 @@ module.exports = exports = (callback) => {
       console.log('BB-8 UUID - "' + deviceUUID + '" found');
       console.log('Local Name: ' + localName);
       var config = require('home-config').load('.bb8config', {
-        BB8_UUIsD: deviceUUID,
+        BB8_UUID: deviceUUID,
         BB8_LOCAL_NAME: localName
       });
       config.save();

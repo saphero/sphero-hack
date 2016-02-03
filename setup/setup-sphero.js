@@ -10,7 +10,7 @@ module.exports = exports = (cb) => {
     files.filter(file => file.indexOf(spheroFile) === 0);
     /* eslint-disable camelcase */
     const config = require('home-config').load('.spheroconfig', {
-      Sphero_ID: files[0]
+      SPHERO_ID: files[0]
     });
     /* eslint-enable camelcase */
     config.save();

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = exports = (orb) => {
-  setInterval(() => {
+  return setInterval(() => {
     orb.randomColor();
   }, 500);
 };
