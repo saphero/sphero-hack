@@ -31,7 +31,9 @@ describe('socket listener tests', () => {
         this.counter++;
         cb();
       },
-      color: () => { }
+      color: () => { },
+      streamVelocity: () => { },
+      on: () => { }
     };
     socketListeners(this.io, this.orb);
   });
@@ -99,24 +101,35 @@ describe('socket listener tests', () => {
     });
   });
 
-  it('lights preset should send a reply', (done) => {
-    this.socket.emit('flashing-lights', true);
-    this.socket.on('flashing-lights', () => {
-      done();
+  it('xmas preset should send a reply', (done) => {
+    const currPreset = 'xmas';
+    this.socket.emit('preset', { name: currPreset, test: true });
+    this.socket.on('preset-executed', (command) => {
+      if (command === currPreset) done();
+    });
+  });
+
+  it('rainbow preset should send a reply', (done) => {
+    const currPreset = 'rainbow';
+    this.socket.emit('preset', { name: currPreset, test: true });
+    this.socket.on('preset-executed', (command) => {
+      if (command === currPreset) done();
     });
   });
 
   it('look preset should send a reply', (done) => {
-    this.socket.emit('look', true);
-    this.socket.on('look', () => {
-      done();
+    const currPreset = 'look';
+    this.socket.emit('preset', { name: currPreset, test: true });
+    this.socket.on('preset-executed', (command) => {
+      if (command === currPreset) done();
     });
   });
 
   it('move-random preset should send a reply', (done) => {
-    this.socket.emit('move-random', true);
-    this.socket.on('move-random', () => {
-      done();
+    const currPreset = 'random';
+    this.socket.emit('preset', { name: currPreset, test: true });
+    this.socket.on('preset-executed', (command) => {
+      if (command === currPreset) done();
     });
   });
 
