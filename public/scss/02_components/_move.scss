@@ -1,8 +1,36 @@
-.ctrl-btn {
-  background-color: $base-color-liteblue;
-  color: $base-color-blue;
+@mixin rotate($deg: 0deg) {
+  -ms-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  transform: rotate($deg);
 }
+
+.ctrl-wrapper {
+  padding: 10px;
+  border: 1px solid black;
+  min-height: 100px;
+}
+.ctrl-btn {
+  @include btn($base-color-turq);
+  background-color: $tert-color-liteblue;
+  font-weight: bold;
+  height: 50px;
+  width: 50px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  &#up-btn {
+    @include rotate(180deg);
+  }
+  &#left-btn {
+    @include rotate(90deg);
+  }
+  &#right-btn {
+    @include rotate(270deg);
+  }
+}
+.offset-btn {
+  background-color: transparent;
+}
+
 .active-btn {
   background-color: $base-color-turq;
-  color: $base-color-white;
 }
