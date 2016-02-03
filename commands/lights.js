@@ -21,7 +21,7 @@ exports.rainbow = (orb) => {
   return setInterval(() => {
     nextRainbow();
     orb.color({ red: r, green: g, blue: b });
-  }, 250);
+  }, 100);
 };
 
 exports.xmas = (orb) => {
@@ -51,5 +51,6 @@ exports.disco = (orb) => {
     } else {
       orb.color('black');
     }
-  }, 500);
+    count++;
+  }, 250);
 };
