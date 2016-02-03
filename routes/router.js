@@ -18,3 +18,7 @@ Router.get('/color', (req, res) => {
 Router.get('/move', (req, res) => {
   res.render('move');
 });
+
+Router.get('/presets', (req, res) => {
+  res.render('presets');
+});

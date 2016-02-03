@@ -1,5 +1,5 @@
-// "use strict";
-//
+'use strict';
+
 // var sphero = require("../");
 // var orb = sphero(process.env.PORT);
 //
@@ -15,3 +15,15 @@
 // };
 
 //randomColor function as an export
+
+module.exports = exports = (orb) => {
+  orb.color('yellow');
+  function randomDance(direction, interval) {
+    console.log(direction, interval);
+    return setTimeout(() => {
+      // orb.roll(150, direction);
+      randomDance(Math.floor(Math.random() * 360), Math.floor(Math.random() * 1500));
+    }, interval);
+  };
+  randomDance(Math.floor(Math.random() * 360), Math.floor(Math.random() * 1500));
+};
