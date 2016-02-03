@@ -36,6 +36,9 @@ $('#connect-btn-sprk').on('click', () => {
 $('#connect-btn-bb8').on('click', () => {
   console.log('connecting to bb8');
   socket.emit('connect-btn-bb8');
+  setTimeout(() => {
+    socket.emit('connect-btn-bb8');
+  }, 2000);
   swal({
     title: 'Connecting to BB-8/Ollie...',
     imageUrl: 'static/img/ripple.gif',
