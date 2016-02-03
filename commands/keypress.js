@@ -1,17 +1,16 @@
 'use strict';
 
-const orb = require(__dirname + '/../lib/device-config')();
 const keypress = require('keypress');
 
-module.exports = exports = () => {
+module.exports = exports = (orb) => {
   orb.connect(listen);
   var speed = 200;
-  var max = 250;
-  var min = 10;
-  var interval = 10;
+  const max = 250;
+  const min = 10;
+  const interval = 10;
 
   function handle(ch, key) {
-    var stop = orb.roll.bind(orb, 0, 0);
+    var stop = orb.roll(0, 0);
 
     if (key.ctrl && key.name === 'c') {
       process.stdin.pause();

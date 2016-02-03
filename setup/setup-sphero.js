@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-module.exports = exports = () => {
+module.exports = exports = (cb) => {
   console.log('Beginning setup');
   const spheroFile = 'tty.Sphero';
   fs.readdir('/dev', (err, files) => {
@@ -10,10 +10,11 @@ module.exports = exports = () => {
     files.filter(file => file.indexOf(spheroFile) === 0);
     /* eslint-disable camelcase */
     const config = require('home-config').load('.spheroconfig', {
-      Sphero_ID: files[0]
+      SPHERO_ID: files[0]
     });
     /* eslint-enable camelcase */
     config.save();
-    return console.log('Info saved to ~/.spheroconfig');
+    console.log('Info saved to ~/.spheroconfig');
+    cb();
   });
 };

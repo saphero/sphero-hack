@@ -1,6 +1,7 @@
 'use strict';
+var socket = io.connect('http://localhost:3000');
 
-var defaultColor = '#ff0000';
+var defaultColor = '#4169e1';
 var presetColors = [
   { colorName: 'Red', colorCode: '#ff0000' },
   { colorName: 'Orange', colorCode: '#ffa500' },
@@ -30,4 +31,5 @@ var presetColors = [
 
 hsvPicker(defaultColor, presetColors, (colorObj) => {
   console.log(colorObj.HEX);
+  socket.emit('color', colorObj.HEX);
 });

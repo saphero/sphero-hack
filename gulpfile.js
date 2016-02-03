@@ -6,7 +6,7 @@ const mocha = require('gulp-mocha');
 const sass = require('gulp-sass');
 
 var files = ['index.js', 'gulpfile.js', './lib/*.js', './test/*.spec.js',
- '!node_modules/**', '!*.json'];
+ './public/js/*.js', '!node_modules/**'];
 
 gulp.task('lint', () => {
   return gulp.src(files)

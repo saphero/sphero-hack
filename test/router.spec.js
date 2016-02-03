@@ -43,7 +43,7 @@ describe('UNIT: test the router endpoints', () => {
         done();
       });
   });
-  after(done => {
+  after((done) => {
     serverInst.close(done);
   });
 });

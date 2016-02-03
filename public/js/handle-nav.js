@@ -12,6 +12,15 @@ var setWhiteIcon = function($el) {
   $img.attr('src', path.substring(0, path.length - 9) + '.svg');
 };
 
+(function(pathname) {
+  pathname = pathname || $(location).attr('pathname').toLowerCase();
+  if (pathname === '/') pathname = '/connect';
+  $('#primary-nav li a').removeClass('active');
+  var $el = $('#primary-nav li a[data-section=' + pathname.slice(1) + ']');
+  $el.addClass('active');
+  setBlueIcon($el);
+})();
+
 $('#primary-nav li:not(:first-child) a').hover(function() {
   if (!$(this).hasClass('active')) setBlueIcon($(this));
 }, function() {

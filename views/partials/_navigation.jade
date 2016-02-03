@@ -3,32 +3,31 @@ nav#primary-nav
     li.nav-brand
       img(src='static/img/brand-logo.svg', alt='Saphero')
     li
-      a.active(href='#')
+      a(href='/', data-section='connect')
         .row.middle-xs
           .col-xs-4
-            img.nav-icon(src='static/img/icons/bluetooth_blue.svg', alt='Connect')
+            img.nav-icon(src='static/img/icons/bluetooth.svg', alt='Connect')
           .col-xs-8 Connect
     li
-      a(href='#')
+      a(href='/move', data-section='move')
         .row.middle-xs
           .col-xs-4
-            img.nav-icon(src='static/img/icons/controller.svg', alt='Move')
-            
-          .col-xs-8 Move
+            img.nav-icon(src='static/img/icons/controller.svg', alt='Motion')
+          .col-xs-8 Motion
     li
-      a(href='#')
+      a(href='/color', data-section='color')
         .row.middle-xs
           .col-xs-4
             img.nav-icon(src='static/img/icons/dropper.svg', alt='Colors')
-          .col-xs-8 Colors
+          .col-xs-8 Color
     li
-      a(href='#')
+      a(href='/presets', data-section='presets')
         .row.middle-xs
           .col-xs-4
-            img.nav-icon(src='static/img/icons/settings.svg', alt='Settings')
-          .col-xs-8 Settings
+            img.nav-icon(src='static/img/icons/book.svg', alt='Presets')
+          .col-xs-8 Presets
     li
-      a(href='#')
+      a(href='/about', data-section='about')
         .row.middle-xs
           .col-xs-4
             img.nav-icon(src='static/img/icons/about.svg', alt='About')

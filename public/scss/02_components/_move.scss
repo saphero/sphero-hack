@@ -1,0 +1,47 @@
+@mixin rotate($deg: 0deg) {
+  -ms-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+.ctrl-wrapper {
+  padding: 10px;
+  border: 1px solid $sec-color-slate;
+  min-height: 100px;
+}
+.ctrl-btn {
+  height: 50px;
+  width: 50px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  &:not(.offset-btn) {
+    @include btn3D($tert-color-liteblue);
+    font-weight: bold;
+    &:hover, &:active {
+      background-color: $base-color-turq;
+      border-bottom-color: darken($base-color-turq, 10%);
+      -webkit-box-shadow: inset 0 -2px darken($base-color-turq, 10%);
+      box-shadow: inset 0 -2px darken($base-color-turq, 10%);
+    }
+  }
+  &.offset-btn {
+    @include btn(transparent);
+  }
+  &.active-btn {
+    background-color: $base-color-turq;
+    position: relative;
+    top: 1px;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  &#up-btn img {
+    @include rotate(180deg);
+  }
+  &#left-btn img {
+    @include rotate(90deg);
+  }
+  &#right-btn img {
+    @include rotate(270deg);
+  }
+}
