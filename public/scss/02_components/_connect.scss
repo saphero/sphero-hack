@@ -6,13 +6,27 @@
     max-width: 200px;
   }
   button.btn, input.btn {
+    font-family: $header-font-family;
+    letter-spacing: 0.4px;
+    font-weight: bold;
     min-width: 100px;
   }
 }
 .connect-req {
+  text-align: left;
   color: $tert-color-slate;
   li {
     margin-bottom: 6px;
     font-size: 14px;
   }
+}
+.sweet-alert.setup-modal {
+  h2 {
+    color: $base-color-blue;
+    margin-bottom: 10px;
+  }
+  fieldset {
+    display: none;
+  }
+
 }
