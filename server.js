@@ -15,7 +15,8 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 // Creates all socket.io event listeners
-socketListeners(io);
+var orb;
+socketListeners(io, orb);
 
 var serverInst = server.listen(3000, () => {
   console.log('Server running on port 3000');
