@@ -49,3 +49,15 @@ function highlightBtn(btnId) {
     $(btnId).removeClass('active-btn');
   }, 150);
 }
+
+socket.on('speedometer', (data) => {
+  console.log(data);
+  $.plot($('#speed_graph'), data, {
+    yaxis: {
+      min: 0
+    },
+    xaxis: {
+      show: false
+    }
+  });
+});
