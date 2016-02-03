@@ -2,32 +2,31 @@ include ./partials/_layout
 include ./partials/_navigation
 script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js')
 
-#app-background
-  .row
-    .col-xs
-      .box
-        h2 Move 
-
+.content
+  h1.page-header Motion Control
   .row
     .col-xs-12.col-sm.col-md-6.col-lg-5
-      .box
-        h2 Section 1
+      h2 Section 1
     .col-xs-12.col-sm.col-md-6.col-lg-7
-      .box
-        h2 Section 2
-      .ctrl-wrapper.row
-        .col-xs-6
+      h2 Section 2
+      .row.ctrl-wrapper
+        .col-xs-7
           h4 Direction
-          button#up-btn.ctrl-btn ^
-          .col-xs-12.col-sm.col-md.col-lg
-            .btn-wrapper
-              button#left-btn.ctrl-btn <
-              button#down-btn.ctrl-btn v
-              button#right-btn.ctrl-btn >
-        .col-xs-6
-          .col-xs-12.col-sm.col-md.col-lg
-            h4 Speed
-            button#slow-btn.ctrl-btn O
-            button#fast-btn.ctrl-btn P
+          .row
+              button.offset-btn.ctrl-btn
+              button#up-btn.ctrl-btn
+                img(src='static/img/arrow-down.svg')
+          .row
+            button#left-btn.ctrl-btn
+              img(src='static/img/arrow-down.svg')
+            button#down-btn.ctrl-btn
+              img(src='static/img/arrow-down.svg')
+            button#right-btn.ctrl-btn
+              img(src='static/img/arrow-down.svg')
+
+        .col-xs-5
+          h4 Speed
+          button#slow-btn.ctrl-btn O
+          button#fast-btn.ctrl-btn P
             
 script(type='text/javascript', src='static/js/motion-socket.js')
