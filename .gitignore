@@ -4,3 +4,4 @@
 **/*.log
 db/
 /public/css/style.css
+coverage/
