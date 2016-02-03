@@ -7,7 +7,7 @@ const moveRandom = require(__dirname + '/../commands/move-random');
 
 describe('sphero commands', () => {
   it('random lights should send color commands', (done) => {
-    const testInterval = lights(this.testOrb);
+    const testInterval = lights.rainbow(this.testOrb);
     setTimeout(() => {
       expect(this.called).to.eql(1);
       clearInterval(testInterval);

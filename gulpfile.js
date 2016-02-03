@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
 const sass = require('gulp-sass');
+const istanbul = require('gulp-istanbul');
 
 var files = ['index.js', 'gulpfile.js', './lib/*.js', './test/*.spec.js',
  './public/js/*.js', '!node_modules/**'];
@@ -24,13 +25,21 @@ gulp.task('sass_watch', () => {
   gulp.watch('./public/scss/**/*.scss', ['sass']);
 });
 
-gulp.task('mocha', () => {
+gulp.task('pre-test', () => {
+  return gulp.src(['lib/**/*.js'])
+    .pipe(istanbul())
+    .pipe(istanbul.hookRequire());
+});
+
+gulp.task('test', ['pre-test'], () => {
   return gulp.src('test/*.spec.js')
-    .pipe(mocha());
+    .pipe(mocha())
+    .pipe(istanbul.writeReports())
+    .pipe(istanbul.enforceThresholds({ thresholds: { global: 90 } }));
 });
 
 gulp.task('watch', () => {
-  gulp.watch(files, ['sass', 'lint', 'mocha']);
+  gulp.watch(files, ['sass', 'lint', 'test']);
 });
 
-gulp.task('default', ['watch', 'lint', 'mocha']);
+gulp.task('default', ['watch', 'lint', 'test']);

@@ -38,6 +38,7 @@
   "homepage": "https://github.com/saphero/sphero-hack#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "gulp-istanbul": "^0.10.3",
     "home-config": "^0.1.0",
     "jade": "^1.11.0",
     "keypress": "^0.2.1",
