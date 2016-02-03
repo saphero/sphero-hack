@@ -3,10 +3,10 @@
 module.exports = exports = (orb) => {
   orb.streamGyroscope();
 
-  orb.on("gyroscope", function(data) {
-    console.log("gyroscope:");
-    console.log("    value:", data.xGyro.value[0]);
-    console.log("    value:", data.yGyro.value[0]);
-    console.log("    value:", data.zGyro.value[0]);
+  orb.on('gyroscope', (data) => {
+    console.log('gyroscope:');
+    console.log('    value:', data.xGyro.value[0]);
+    console.log('    value:', data.yGyro.value[0]);
+    console.log('    value:', data.zGyro.value[0]);
   });
 };

@@ -1,6 +1,6 @@
 'use strict';
 
-/* eslint-disable */
+/* eslint-disable no-unused-expressions */
 
 const expect = require('chai').expect;
 const socketListeners = require(__dirname + '/../lib/socket-listeners');
@@ -19,7 +19,7 @@ describe('socket listener tests', () => {
     });
 
     this.orb = {
-      roll: (speed, degrees) => {
+      roll: (speed) => {
         expect(speed).to.exist;
         this.counter++;
       },
@@ -58,7 +58,7 @@ describe('socket listener tests', () => {
     this.socket.on('rolled', () => {
       expect(this.counter).to.eql(3);
       done();
-    })
+    });
   });
 
   it('roll right events should work', (done) => {
@@ -66,7 +66,7 @@ describe('socket listener tests', () => {
     this.socket.on('rolled', () => {
       expect(this.counter).to.eql(3);
       done();
-    })
+    });
   });
 
   it('roll down events should work', (done) => {
@@ -74,7 +74,7 @@ describe('socket listener tests', () => {
     this.socket.on('rolled', () => {
       expect(this.counter).to.eql(3);
       done();
-    })
+    });
   });
 
   it('roll up events should work', (done) => {
@@ -82,7 +82,7 @@ describe('socket listener tests', () => {
     this.socket.on('rolled', () => {
       expect(this.counter).to.eql(2);
       done();
-    })
+    });
   });
 
   it('speed increase should work', (done) => {
