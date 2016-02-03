@@ -23,16 +23,12 @@ $base-color-slate: #BCBDC1;
     $tert-color-slate: #5D6160;
 $base-gray: #1C1D21;
 
-#app-background {
-  min-height: 715px;
-  text-align: center;
-  padding-left: 180px;
-}
 body {
   background-color: $base-color-white;
 }
 .content {
-  margin-left: 190px;
+  margin-left: 180px;
+  padding-left: 15px;
 }
 h1, h2, h3 {
   font-family: Lato;
@@ -42,6 +38,7 @@ h4 {
   font-family: Lato;
   color: $tert-color-slate;
   font-weight: normal;
+  margin-top: 0.5rem;
 }
 a {
   text-decoration: none;
@@ -53,4 +50,8 @@ a {
   text-align: center;
   letter-spacing: 1px;
   margin-top: 48px;
+}
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
 }
