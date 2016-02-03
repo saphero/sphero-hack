@@ -6,11 +6,14 @@ script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/socke
   h1.page-header Motion Control
   .row
     .col-xs-12.col-sm.col-md-6.col-lg-5
-      h2 Section 1
+      .box
+        h4 Accelerometer
     .col-xs-12.col-sm.col-md-6.col-lg-7
-      h2 Section 2
-      .row.ctrl-wrapper
-        .col-xs-7
+      .box
+        h4 Speedometer
+        #speed_graph(style='width:600px;height:300px')
+      .ctrl-wrapper.row
+        .col-xs-6
           h4 Direction
           .row
               button.offset-btn.ctrl-btn
@@ -29,4 +32,10 @@ script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/socke
           button#slow-btn.ctrl-btn O
           button#fast-btn.ctrl-btn P
             
+            //- button#left-btn.ctrl-btn O
+            //- button.ctrl-btn P
+            
 script(type='text/javascript', src='static/js/motion-socket.js')
+script(src="static/vendor/jquery.min.js", charset="utf-8")
+script(src="static/vendor/jquery.flot.min.js", charset="utf-8")
+script(src="static/js/speedom_graph.js", charset="utf-8")
