@@ -22,11 +22,15 @@
 }
 .sweet-alert.setup-modal {
   h2 {
+    font-family: $header-font-family;
     color: $base-color-blue;
     margin-bottom: 10px;
   }
   fieldset {
     display: none;
   }
-
+  .sa-button-container button.cancel {
+    background-color: $base-color-slate;
+    font-weight: normal;
+  }
 }
