@@ -10,7 +10,8 @@ module.exports = exports = (orb, socket) => {
     if (!data.xVelocity.value[0] || !data.yVelocity.value[0]) {
       dataArr[0].push([count, 0]);
     } else {
-      var speed = Math.sqrt(Math.pow(data.xVelocity.value[0], 2), Math.pow(data.yVelocity.value[0], 2));
+      var speed = Math.sqrt(Math.pow(data.xVelocity.value[0], 2),
+        Math.pow(data.yVelocity.value[0], 2));
       console.log(speed);
       // dataArr[0].push([data.xVelocity.value[0], data.yVelocity.value[0]]);
       dataArr[0].push([count, speed]);

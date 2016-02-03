@@ -1,11 +1,5 @@
 'use strict';
 
-// module.exports = exports = (orb) => {
-//   return setInterval(() => {
-//     orb.randomColor();
-//   }, 500);
-// };
-
 exports.rainbow = (orb) => {
   var frequency = 0.3;
   var r, g, b;
