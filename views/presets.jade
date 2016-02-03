@@ -1,0 +1,41 @@
+include ./partials/_layout
+include ./partials/_navigation
+script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js')
+
+.content
+  h1.page-header Presets Library
+  .row.card-container
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Rainbow
+        p Flashes light with rainbow colors
+        button.btn.shading(data-preset='rainbow') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header X'mas
+        p Flashes red and green light
+        button.btn.shading(data-preset='xmas') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Disco
+        p Flashes random lights
+        button.btn.shading(data-preset='disco') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Dance party
+        p Twerks
+        button.btn.shading(data-preset='dance') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Look around
+        p Changes direction when it comes to a wall
+        button.btn.shading(data-preset='look') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Indecisive
+        p Travels in a random direction every second
+        button.btn.shading(data-preset='random') Run
+  .row
+    button#stop-btn Clear
+  
+script(type='text/javascript', src='static/js/presets.js')

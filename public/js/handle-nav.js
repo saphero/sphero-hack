@@ -1,12 +1,12 @@
 'use strict';
 
-var setBlueIcon = function($el) {
+function setBlueIcon($el) {
   var $img = $el.find('img');
   var path = $img.attr('src');
   $img.attr('src', path.substring(0, path.length - 4) + '_blue.svg');
 };
 
-var setWhiteIcon = function($el) {
+function setWhiteIcon($el) {
   var $img = $el.find('img');
   var path = $img.attr('src');
   $img.attr('src', path.substring(0, path.length - 9) + '.svg');

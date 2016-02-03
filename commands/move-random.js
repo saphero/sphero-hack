@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = exports = (orb) => {
-    console.log('Command: move-random');
+    // console.log('Command: move-random');
     orb.color('#00ffab');
     return setInterval(() => {
       var direction = Math.floor(Math.random() * 360);
