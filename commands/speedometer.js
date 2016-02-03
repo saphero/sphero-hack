@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = exports = (orb, socket) => {
-  if (!orb) return console.log('orb not found');
+  if (!orb) return;
   orb.streamVelocity();
   var dataArr = [[]];
   var count = 0;
