@@ -51,6 +51,41 @@ window.addEventListener('gamepadbuttonup', (e) => {
 var leftX = 0, leftY = 0;
 var rightX = 0, rightY = 0;
 
+window.addEventListener('gamepadaxismove', (e) => {
+  // Left joystick: x-axis is #0, y-axis is #1 (reversed)
+  // Left joystick is set to control color
+  if ([0, 1].indexOf(e.axis) > -1) {
+    let x = e.gamepad.axes[0].toFixed(3);
+    let y = e.gamepad.axes[1].toFixed(3) * -1;
+    if (Math.abs(x - leftX) > 0.45 || Math.abs(y - leftY) > 0.45) {
+      console.log('Axes move', e.axis, e.value, x, y);
+      leftX = x;
+      leftY = y;
+      let hue = Math.round(Math.atan2(y, x) * 180 / Math.PI);
+      if (hue < 0) hue += 360;
+      var hex = hsvToHex({ hue: hue, sat: 0.9, val: 0.9 });
+      console.log(hex);
+      socket.emit('color', hex);
+    }
+  }
+
+  // Right joystick: x-axis is #2, y-axis is #5 (reversed)
+  // Right joystick is set to control direction
+  if ([2, 5].indexOf(e.axis) > -1) {
+    let x = Math.abs(e.gamepad.axes[2].toFixed(3));
+    let y = Math.abs(e.gamepad.axes[5].toFixed(3));
+    if (x - rightX > 0.2 || y - rightY > 0.2) {
+      console.log('Axes move', e.axis, e.value, x, y);
+      rightX = x;
+      rightY = y;
+    } else if (rightX > x || rightY > y) {
+      rightX = x;
+      rightY = y;
+    }
+    // ...
+  }
+});
+
 function hsvToHex(hsv) {
   var h = hsv.hue, s = hsv.sat, v = hsv.val;
   var rgb, i, data = [];
@@ -89,38 +124,3 @@ function hsvToHex(hsv) {
     return ('0' + Math.round(x * 255).toString(16)).slice(-2);
   }).join('');
 }
-
-window.addEventListener('gamepadaxismove', (e) => {
-  // Left joystick: x-axis is #0, y-axis is #1 (reversed)
-  // Left joystick is set to control color
-  if ([0, 1].indexOf(e.axis) > -1) {
-    let x = e.gamepad.axes[0].toFixed(3);
-    let y = e.gamepad.axes[1].toFixed(3) * -1;
-    if (Math.abs(x - leftX) > 0.45 || Math.abs(y - leftY) > 0.45) {
-      console.log('Axes move', e.axis, e.value, x, y);
-      leftX = x;
-      leftY = y;
-      let hue = Math.round(Math.atan2(y, x) * 180 / Math.PI);
-      if (hue < 0) hue += 360;
-      var hex = hsvToHex({ hue: hue, sat: 0.9, val: 0.9 });
-      console.log(hex);
-      socket.emit('color', hex);
-    }
-  }
-
-  // Right joystick: x-axis is #2, y-axis is #5 (reversed)
-  // Right joystick is set to control direction
-  if ([2, 5].indexOf(e.axis) > -1) {
-    let x = Math.abs(e.gamepad.axes[2].toFixed(3));
-    let y = Math.abs(e.gamepad.axes[5].toFixed(3));
-    if (x - rightX > 0.2 || y - rightY > 0.2) {
-      console.log('Axes move', e.axis, e.value, x, y);
-      rightX = x;
-      rightY = y;
-    } else if (rightX > x || rightY > y) {
-      rightX = x;
-      rightY = y;
-    }
-    // ...
-  }
-});
