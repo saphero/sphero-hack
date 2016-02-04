@@ -8,32 +8,29 @@ script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/socke
     .col-xs-12.col-sm.col-md-6.col-lg-5
       .box
         h4 Accelerometer
-        .col-xs-6
         #accel_graph(style='width:400px;height:300px')
-        .col-xs-6
-        #gyro_graph(style='width:400px;height:300px')
     .col-xs-12.col-sm.col-md-6.col-lg-7
       .box
         h4 Speedometer
         #speed_graph(style='width:600px;height:300px')
-      .ctrl-wrapper.row
-        .col-xs-6
-          h4 Direction
-          .row.center-sm
-              button#up-btn.ctrl-btn
-                img(src='static/img/arrow-down.svg')
-          .row.center-sm
-            button#left-btn.ctrl-btn
-              img(src='static/img/arrow-down.svg')
-            button#down-btn.ctrl-btn
-              img(src='static/img/arrow-down.svg')
-            button#right-btn.ctrl-btn
-              img(src='static/img/arrow-down.svg')
+  .ctrl-wrapper.row
+    .col-xs-6
+      h4 Direction
+      .row.center-sm
+          button#up-btn.ctrl-btn
+            img(src='static/img/arrow-down.svg')
+      .row.center-sm
+        button#left-btn.ctrl-btn
+          img(src='static/img/arrow-down.svg')
+        button#down-btn.ctrl-btn
+          img(src='static/img/arrow-down.svg')
+        button#right-btn.ctrl-btn
+          img(src='static/img/arrow-down.svg')
 
-        .col-xs-5
-          h4 Speed
-          button#slow-btn.ctrl-btn O
-          button#fast-btn.ctrl-btn P
+    .col-xs-5
+      h4 Speed
+      button#slow-btn.ctrl-btn O
+      button#fast-btn.ctrl-btn P
             
             //- button#left-btn.ctrl-btn O
             //- button.ctrl-btn P

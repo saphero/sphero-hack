@@ -17,6 +17,6 @@ module.exports = exports = (orb, socket) => {
       dataArr.push([2, data.zGyro.value[0]]);
     }
     socket.emit('gyroscope', dataArr);
-    console.log(dataArr);
+      console.log(dataArr);
   });
 };

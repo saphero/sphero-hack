@@ -2,8 +2,8 @@
 
 module.exports = exports = (orb) => {
   orb.connect(() => {
-    orb.detectCollisions({ device: 'bb8' });
-    orb.color('yellow');
+    orb.detectCollisions();
+    orb.color('green');
 
     orb.on('collision', (data) => {
       console.log('collision detected');

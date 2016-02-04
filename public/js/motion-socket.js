@@ -74,12 +74,3 @@ socket.on('accelerometer', (data) => {
     }
   });
 });
-
-// socket.on('gyroscope', (data) => {
-//   $.plot($('gyro_graph'), data, {
-//     d1: true,
-//     bars: {
-//       show: true
-//     }
-//   });
-// });
