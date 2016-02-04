@@ -1,8 +1,11 @@
 'use strict';
 
 var socket = io.connect('http://localhost:3000');
+/* eslint-enable no-undef */
+var idleTimeout;
 
 function confirmConnect() {
+  if (idleTimeout) clearTimeout(idleTimeout);
   swal({
     title: 'Ready to go!',
     text: 'Your Sphero is now connected.',
@@ -14,6 +17,22 @@ function confirmConnect() {
   () => {
     $(location).attr('pathname', '/move');
   });
+};
+
+function idleError($btn) {
+  idleTimeout = setTimeout(() => {
+    swal({
+      title: 'Connection failed',
+      text: 'There is a problem connnecting to your Sphero. Make sure your Bluetooth is on and your Sphero is awake.',
+      type: 'error',
+      confirmButtonText: 'Try again!',
+      confirmButtonColor: '#36B4C2',
+      showCancelButton: true,
+      customClass: 'setup-modal'
+    }, () => {
+      $btn.trigger('click');
+    });
+  }, 7000);
 };
 
 socket.on('connected-sphero', confirmConnect);
@@ -29,6 +48,7 @@ $('#connect-btn-sprk').on('click', () => {
     showConfirmButton: false,
     customClass: 'setup-modal'
   });
+  idleError($(this));
 });
 
 $('#connect-btn-bb8').on('click', () => {
@@ -44,4 +64,5 @@ $('#connect-btn-bb8').on('click', () => {
     showConfirmButton: false,
     customClass: 'setup-modal'
   });
+  idleError($(this));
 });
