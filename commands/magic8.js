@@ -1,5 +1,5 @@
 'use strict';
-
+var start = false;
 module.exports = exports = (orb) => {
   orb.connect(() => {
     orb.color('purple');
@@ -7,15 +7,16 @@ module.exports = exports = (orb) => {
     orb.streamVelocity();
 
     orb.on('velocity', (data) => {
-      console.log(data);
-      setTimeout(() => {
-        if (data.xVelocity.value[0] === 0) {
-          console.log('still');
+      console.log(data.xVelocity.value[0], data.yVelocity.value[0]);
+      if (data.xVelocity.value[0] > 100 || data.yVelocity.value[0] > 100) {
+        console.log('shaking');
+        start = true;
+      } else {
+        if (start) {
           predict();
-        } else {
-          console.log('shaking');
+          start = false;
         }
-      }, 10000);
+      }
     });
 
     function predict() {
@@ -28,10 +29,8 @@ module.exports = exports = (orb) => {
         console.log('MAYBE');
         return orb.color('yellow');
       }
-      if (number <= 3) {
-        console.log('NO');
-        return orb.color('red');
-      }
+      console.log('NO');
+      return orb.color('red');
     }
   });
 };
