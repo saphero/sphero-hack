@@ -5,6 +5,7 @@ var socket = io.connect('http://localhost:3000');
 var resetHeading = true;
 
 window.onkeydown = (e) => {
+  e.preventDefault();
   if (resetHeading) {
     switch (e.keyCode) {
       case 37:
