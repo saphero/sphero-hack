@@ -4,6 +4,8 @@
 
 #### A [Code Fellows](https://www.codefellows.org/) 401 Project by [Natalie Chow](https://github.com/xxnatc), [Sabrina Tee](https://github.com/sabbyt/), [Logan Tegman](https://github.com/ltegman), [Jose Tello](https://github.com/josectello) and [Jesse Thach](https://github.com/jessethach).
 
+![Control Page](/public/img/setup-screenshot.png)
+
 ### Minimum Requirements
 - For Sphero 1.0/2.0/SPRK models: Bluetooth Classic (Bluetooth 2.0/3.0) enabled computer
 - For BB-8/Ollie models: Bluetooth Low Energy (Bluetooth LE/Bluetooth Smart/Bluetooth 4.0/4.1) enabled computer
