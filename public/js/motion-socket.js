@@ -62,10 +62,15 @@ socket.on('speedometer', (data) => {
 socket.on('accelerometer', (data) => {
   $.plot($('#accel_graph'), data, {
     yaxis: {
-      min: 0
+      min: -2500,
+      max: 2500
     },
     xaxis: {
-      show: false
+      min: -2500,
+      max: 2500
+    },
+    points: {
+      show: true
     }
   });
 });
