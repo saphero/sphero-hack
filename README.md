@@ -42,7 +42,7 @@ Or clone directly from Github: [https://github.com/saphero/sphero-hack](https://
 - Launch server ```npm start```
 - Connect device
 - Plugin a game controller and ensure you are on the ```/move``` page
-- Use arrow buttons to control the direction of device
+- Use arrow buttons or right joystick to control the direction of device
 - ◯ and R1 increases speed
 - ▢ and L1 decreases speed
 - Left joystick changes color based on the color picker
