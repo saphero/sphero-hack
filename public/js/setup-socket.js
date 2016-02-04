@@ -1,4 +1,5 @@
 'use strict';
+/* global io swal */
 
 var socket = io.connect('http://localhost:3000');
 var idleTimeout;
@@ -22,7 +23,8 @@ function idleError($btn) {
   idleTimeout = setTimeout(() => {
     swal({
       title: 'Connection failed',
-      text: 'There is a problem connnecting to your Sphero. Make sure your Bluetooth is on and your Sphero is awake.',
+      text: 'There is a problem connnecting to your Sphero. ' +
+        'Make sure your Bluetooth is on and your Sphero is awake.',
       type: 'error',
       confirmButtonText: 'Try again!',
       confirmButtonColor: '#36B4C2',

@@ -18,8 +18,8 @@ Or clone directly from Github: [https://github.com/saphero/sphero-hack](https://
 - You do not need to pair BB-8 or Ollie devices
 - ```npm install```
 - ```gulp sass```
-- Launch ```node server.js```
-- Open browser at ```localhost:3000``` or at specified port and follow the instructions
+- Launch ```npm start```
+- Open browser at ```localhost:3000``` (it should open automatically) and follow the instructions
 
 ### Features
 - Client-side dashboard for easy Sphero/SPRK/BB-8/Ollie connection and control
