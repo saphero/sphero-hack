@@ -22,19 +22,20 @@ describe('socket listener tests', () => {
     this.orb = {
       roll: (speed) => {
         expect(speed).to.exist;
-        this.counter++;
+        this.called++;
       },
       randomColor: () => {
-        this.counter++;
+        this.called++;
       },
       setHeading: (degrees, cb) => {
         expect(degrees).to.exist;
-        this.counter++;
+        this.called++;
         cb();
       },
       color: () => { },
       streamVelocity: () => { },
       streamAccelerometer: () => { },
+      streamGyroscope: () => { },
       on: () => { }
     };
     socketListeners(this.io, this.orb);
@@ -42,14 +43,14 @@ describe('socket listener tests', () => {
 
   beforeEach((done) => {
     // Creates all socket.io event listeners
-    this.counter = 0;
+    this.called = 0;
     this.socket = require('socket.io-client')('http://localhost:5000');
     this.socket.on('connect', () => done());
   });
 
   it('rollDirection should work', (done) => {
     socketListeners.rollDirection(this.orb, false, 0, { emit() {} }, () => {
-      expect(this.counter).to.eql(2);
+      expect(this.called).to.eql(2);
       expect(this.orb).to.exist;
       done();
     });
@@ -58,7 +59,7 @@ describe('socket listener tests', () => {
   it('roll left events should work', (done) => {
     this.socket.emit('roll', { direction: 'left', resetHeading: true });
     this.socket.on('rolled', () => {
-      expect(this.counter).to.eql(3);
+      expect(this.called).to.eql(3);
       done();
     });
   });
@@ -66,7 +67,7 @@ describe('socket listener tests', () => {
   it('roll right events should work', (done) => {
     this.socket.emit('roll', { direction: 'right', resetHeading: true });
     this.socket.on('rolled', () => {
-      expect(this.counter).to.eql(3);
+      expect(this.called).to.eql(3);
       done();
     });
   });
@@ -74,7 +75,7 @@ describe('socket listener tests', () => {
   it('roll down events should work', (done) => {
     this.socket.emit('roll', { direction: 'down', resetHeading: true });
     this.socket.on('rolled', () => {
-      expect(this.counter).to.eql(3);
+      expect(this.called).to.eql(3);
       done();
     });
   });
@@ -82,7 +83,7 @@ describe('socket listener tests', () => {
   it('roll up events should work', (done) => {
     this.socket.emit('roll', { direction: 'up' });
     this.socket.on('rolled', () => {
-      expect(this.counter).to.eql(2);
+      expect(this.called).to.eql(2);
       done();
     });
   });
@@ -90,7 +91,7 @@ describe('socket listener tests', () => {
   it('speed increase should work', (done) => {
     this.socket.emit('speed', 'up');
     this.socket.on('speed-change', () => {
-      expect(this.counter).to.eql(1);
+      expect(this.called).to.eql(1);
       done();
     });
   });
@@ -98,7 +99,7 @@ describe('socket listener tests', () => {
   it('speed decrease should work', (done) => {
     this.socket.emit('speed', 'down');
     this.socket.on('speed-change', () => {
-      expect(this.counter).to.eql(1);
+      expect(this.called).to.eql(1);
       done();
     });
   });
