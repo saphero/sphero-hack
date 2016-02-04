@@ -1,8 +1,6 @@
 'use strict';
 
-/* eslint-disable no-undef */
 var socket = io.connect('http://localhost:3000');
-/* eslint-enable no-undef */
 var resetHeading = true;
 toggleKeyControls();
 
@@ -64,10 +62,15 @@ socket.on('speedometer', (data) => {
 socket.on('accelerometer', (data) => {
   $.plot($('#accel_graph'), data, {
     yaxis: {
-      min: 0
+      min: -2500,
+      max: 2500
     },
     xaxis: {
-      show: false
+      min: -2500,
+      max: 2500
+    },
+    points: {
+      show: true
     }
   });
 });
