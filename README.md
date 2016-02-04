@@ -35,22 +35,6 @@ Device setup and connection page:
 ```
 localhost:3000
 ```
-<!-- Game controller and keypress control:
-```
-/move
-```
-Preset colors and color picker:
-```
-/color
-```
-Preset commands:
-```
-/preset
-```
-About the contributors:
-```
-/about
-``` -->
 
 | Routes        | Description                          |
 | :-----------  | ------------------------------------ |
