@@ -19,7 +19,7 @@ describe('socket listener tests', () => {
       console.log('server running on port 5000');
     });
 
-    this.orb = {
+    this.testOrb = {
       roll: (speed) => {
         expect(speed).to.exist;
         this.called++;
@@ -35,10 +35,9 @@ describe('socket listener tests', () => {
       color: () => { },
       streamVelocity: () => { },
       streamAccelerometer: () => { },
-      streamGyroscope: () => { },
       on: () => { }
     };
-    socketListeners(this.io, this.orb);
+    socketListeners(this.io, this.testOrb);
   });
 
   beforeEach((done) => {
@@ -49,9 +48,9 @@ describe('socket listener tests', () => {
   });
 
   it('rollDirection should work', (done) => {
-    socketListeners.rollDirection(this.orb, false, 0, { emit() {} }, () => {
+    socketListeners.rollDirection(this.testOrb, false, 0, { emit() {} }, () => {
       expect(this.called).to.eql(2);
-      expect(this.orb).to.exist;
+      expect(this.testOrb).to.exist;
       done();
     });
   });
@@ -129,7 +128,7 @@ describe('socket listener tests', () => {
   });
 
   it('move-random preset should send a reply', (done) => {
-    const currPreset = 'random';
+    const currPreset = 'move-random';
     this.socket.emit('preset', { name: currPreset, test: true });
     this.socket.on('preset-executed', (command) => {
       if (command === currPreset) done();
@@ -137,7 +136,7 @@ describe('socket listener tests', () => {
   });
 
   afterEach(() => {
-    this.socket.disconnect();
+    this.socket.destroy();
   });
 
   after(() => {
