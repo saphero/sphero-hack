@@ -3,7 +3,14 @@
   -webkit-transform: rotate($deg);
   transform: rotate($deg);
 }
-
+#accel_graph {
+  width: 400px;
+  height: 300px;
+}
+#speed_graph {
+  width: 600px;
+  height: 300px;
+}
 .ctrl-wrapper {
   padding: 10px;
   border: 1px solid $sec-color-slate;
@@ -16,18 +23,13 @@
   width: 50px;
   margin-right: 4px;
   margin-bottom: 4px;
-  &:not(.offset-btn) {
-    @include btn3D($tert-color-liteblue);
-    font-weight: bold;
-    &:hover, &:active {
-      background-color: $base-color-turq;
-      border-bottom-color: darken($base-color-turq, 10%);
-      -webkit-box-shadow: inset 0 -2px darken($base-color-turq, 10%);
-      box-shadow: inset 0 -2px darken($base-color-turq, 10%);
-    }
-  }
-  &.offset-btn {
-    @include btn(transparent);
+  @include btn3D($tert-color-liteblue);
+  font-weight: bold;
+  &:hover, &:active {
+    background-color: $base-color-turq;
+    border-bottom-color: darken($base-color-turq, 10%);
+    -webkit-box-shadow: inset 0 -2px darken($base-color-turq, 10%);
+    box-shadow: inset 0 -2px darken($base-color-turq, 10%);
   }
   &.active-btn {
     background-color: $base-color-turq;
@@ -46,4 +48,8 @@
   &#right-btn img {
     @include rotate(270deg);
   }
+}
+.speed-indicator {
+  width: 50px;
+  color: $tert-color-slate;
 }
