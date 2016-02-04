@@ -1,5 +1,8 @@
 'use strict';
 
+/* eslint-disable no-unused-expressions
+*/
+
 const expect = require('chai').expect;
 const lights = require(__dirname + '/../commands/lights');
 const look = require(__dirname + '/../commands/look');
@@ -15,7 +18,7 @@ describe('sphero commands', () => {
       expect(this.called).to.eql(1);
       clearInterval(testInterval);
       done();
-    }, 500);
+    }, 100);
   });
 
   it('look should send roll commands', (done) => {
@@ -63,9 +66,10 @@ describe('sphero commands', () => {
         expect(color).to.exist;
         this.called++;
       },
-      randomColor: () => this.called++,
-      streamGyroscope: () => this.called++,
+      streamVelocity: () => this.called++,
       streamAccelerometer: () => this.called++,
+      streamGyroscope: () => this.called++,
+      randomColor: () => this.called++,
       on: (event, cb) => {
         expect(event).to.be.a('string');
         expect(cb).to.be.a('function');

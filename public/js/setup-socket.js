@@ -17,7 +17,7 @@ function confirmConnect() {
   () => {
     $(location).attr('pathname', '/move');
   });
-};
+}
 
 function idleError($btn) {
   idleTimeout = setTimeout(() => {
