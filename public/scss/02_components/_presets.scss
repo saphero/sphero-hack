@@ -1,0 +1,38 @@
+.card-container {
+  padding: 12px 6px 0px 6px;
+  margin-right: 12px;
+  background-color: $base-color-liteblue;
+  .card {
+    background-color: $base-color-white;
+    width: 90%;
+    text-align: center;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-right: 20px;
+    margin-bottom: 12px;
+    box-shadow: 2px 2px 2px $sec-color-liteblue;
+    .card-header {
+      margin: 6px 0px;
+    }
+    hr {
+      border: none;
+      border-bottom: 0.5px solid $base-color-slate;
+    }
+    p {
+      font-size: 14px;
+      color: $tert-color-slate;
+    }
+    button {
+      font-family: $header-font-family;
+      font-size: 14px;
+      min-width: 100px;
+    }
+  }
+}
+
+#stop-btn {
+  @include btn3D($sec-color-yellow);
+  font-family: $header-font-family;
+  font-size: 14px;
+  margin-top: 12px;
+}

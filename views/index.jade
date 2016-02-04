@@ -1,0 +1,29 @@
+include ./partials/_layout
+include ./partials/_navigation
+include ./partials/_modal
+script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js')
+
+.content
+  h1.page-header Is this the droid you're looking for?
+  .row.bottom-xs
+    .col-sm-6.col-md-4.col-md-offset-2.connect-panel
+      img(src='static/img/bb8.svg')
+      input.btn.shading(id='connect-btn-bb8', type='button', value='BB-8/Ollie')
+    .col-sm-6.col-md-4.connect-panel
+      img(src='static/img/sprk.svg')
+      input.btn.shading(id='connect-btn-sprk', type='button', value='Sphero/SPRK')
+      
+  .row
+    .col-sm-6.col-md-4.col-md-offset-2
+      ul.connect-req
+        li Supported models: BB-8 by Sphero or Ollie
+        li System requirement: OS X with Bluetooth Low Energy (BLE 4.0)
+        li Make sure your Bluetooth is on and BB-8 is nearby
+        
+    .col-sm-6.col-md-4
+      ul.connect-req
+        li Supported models: Sphero 1.0/2.0 or SPRK
+        li System requirement: OS X with Bluetooth Classic (Bluetooth&nbsp;2.0/3.0) support
+        li Make sure Sphero/SPRK is paired via Bluetooth
+
+script(type='text/javascript', src='static/js/setup-socket.js')
