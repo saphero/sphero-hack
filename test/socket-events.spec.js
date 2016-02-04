@@ -1,5 +1,8 @@
 'use strict';
 
+/* eslint-disable no-unused-expressions
+*/
+
 const expect = require('chai').expect;
 const socketListeners = require(__dirname + '/../lib/socket-listeners');
 require(__dirname + '/../server');
@@ -31,6 +34,7 @@ describe('socket listener tests', () => {
       },
       color: () => { },
       streamVelocity: () => { },
+      streamAccelerometer: () => { },
       on: () => { }
     };
     socketListeners(this.io, this.orb);

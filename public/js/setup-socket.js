@@ -14,7 +14,7 @@ function confirmConnect() {
   () => {
     $(location).attr('pathname', '/move');
   });
-};
+}
 
 socket.on('connected-sphero', confirmConnect);
 socket.on('connected-bb8', confirmConnect);
