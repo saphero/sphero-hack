@@ -1,4 +1,6 @@
 'use strict';
+/* global io hsvPicker */
+
 var socket = io.connect('http://localhost:3000');
 
 var defaultColor = '#4169e1';
