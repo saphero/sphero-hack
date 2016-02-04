@@ -102,7 +102,7 @@
     "no-label-var": 2,
     "no-shadow": 0,
     "no-shadow-restricted-names": 2,
-    "no-undef": 1,
+    "no-undef": 2,
     "no-undef-init": 2,
     "no-undefined": 1,
     "no-unused-vars": 2,
@@ -208,7 +208,7 @@
     "max-depth": 0,
     "max-len": [
       1,
-      120,
+      80,
       2
     ],
     "max-params": 0,
@@ -218,7 +218,7 @@
     "arrow-spacing": 2,
     "constructor-super": 2,
     "no-const-assign": 2,
-    "prefer-arrow-callback": 0,
+    "prefer-arrow-callback": 1,
     "no-unneeded-ternary": [
       2,
       { "defaultAssignment": false }
