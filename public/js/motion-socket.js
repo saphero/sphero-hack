@@ -1,28 +1,26 @@
 'use strict';
+/* global io */
 
-/* eslint-disable no-undef */
 var socket = io.connect('http://localhost:3000');
-/* eslint-enable no-undef */
 var resetHeading = true;
-toggleKeyControls();
 
-function toggleKeyControls() {
-  window.onkeydown = e => {
+window.onkeydown = (e) => {
+  if (resetHeading) {
     switch (e.keyCode) {
       case 37:
-        socket.emit('roll', {direction: 'left', resetHeading});
+        socket.emit('roll', { direction: 'left', resetHeading });
         highlightBtn('#left-btn');
         break;
       case 38:
-        socket.emit('roll', {direction: 'up', resetHeading});
+        socket.emit('roll', { direction: 'up', resetHeading });
         highlightBtn('#up-btn');
         break;
       case 39:
-        socket.emit('roll', {direction: 'right', resetHeading});
+        socket.emit('roll', { direction: 'right', resetHeading });
         highlightBtn('#right-btn');
         break;
       case 40:
-        socket.emit('roll', {direction: 'down', resetHeading});
+        socket.emit('roll', { direction: 'down', resetHeading });
         highlightBtn('#down-btn');
         break;
       case 79:
@@ -35,13 +33,13 @@ function toggleKeyControls() {
         break;
       default:
     }
-  resetHeading = false;
-  };
-  window.onkeyup = () => {
-    socket.emit('roll', {direction: 'stop'});
-    resetHeading = true;
-  };
-}
+    resetHeading = false;
+  }
+};
+window.onkeyup = () => {
+  socket.emit('roll', { direction: 'stop' });
+  resetHeading = true;
+};
 
 function highlightBtn(btnId) {
   $(btnId).addClass('active-btn');
@@ -49,3 +47,39 @@ function highlightBtn(btnId) {
     $(btnId).removeClass('active-btn');
   }, 150);
 }
+
+socket.on('speedometer', (data) => {
+  $.plot($('#speed_graph'), data, {
+    yaxis: {
+      min: 0
+    },
+    xaxis: {
+      show: false
+    }
+  });
+});
+
+socket.on('accelerometer', (data) => {
+  $.plot($('#accel_graph'), data, {
+    yaxis: {
+      min: -2500,
+      max: 2500
+    },
+    xaxis: {
+      min: -2500,
+      max: 2500
+    },
+    points: {
+      show: true
+    }
+  });
+});
+
+// socket.on('gyroscope', (data) => {
+//   $.plot($('gyro_graph'), data, {
+//     d1: true,
+//     bars: {
+//       show: true
+//     }
+//   });
+// });

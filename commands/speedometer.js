@@ -1,11 +1,23 @@
 'use strict';
 
-module.exports = exports = (orb) => {
+module.exports = exports = (orb, socket) => {
+  if (!orb) return;
   orb.streamVelocity();
+  var dataArr = [[]];
+  var count = 0;
 
   orb.on('velocity', (data) => {
-    console.log('velocity:');
-    console.log('    value:', data.xVelocity.value[0]);
-    console.log('    value:', data.yVelocity.value[0]);
+    if (!data.xVelocity.value[0] || !data.yVelocity.value[0]) {
+      dataArr[0].push([count, 0]);
+    } else {
+      var speed = Math.sqrt(Math.pow(data.xVelocity.value[0], 2),
+        Math.pow(data.yVelocity.value[0], 2));
+      dataArr[0].push([count, speed]);
+    }
+    if (dataArr[0].length > 50) {
+      dataArr[0] = dataArr[0].slice(dataArr[0].length - 50);
+    }
+    count++;
+    socket.emit('speedometer', dataArr);
   });
 };

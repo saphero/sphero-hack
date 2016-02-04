@@ -1,19 +1,11 @@
 'use strict';
+/* global io swal */
 
-/* eslint-disable no-undef */
 var socket = io.connect('http://localhost:3000');
-/* eslint-enable no-undef */
+var idleTimeout;
 
-document.getElementById('connect-btn-sprk')
-  .onclick = () => socket.emit('connect-btn-sprk');
-// document.getElementById('disconnect')
-//   .onclick = () => socket.emit('disconnect');
-// document.getElementById('bb8Setup').onclick = () => socket.emit('setup-bb8');
-// document.getElementById('bb8Create')
-//   .onclick = () => socket.emit('connect-bb8');
-
-/* ----- can i just register an event here? ----- */
-socket.on('connected-sphero', () => {
+function confirmConnect() {
+  if (idleTimeout) clearTimeout(idleTimeout);
   swal({
     title: 'Ready to go!',
     text: 'Your Sphero is now connected.',
@@ -21,11 +13,13 @@ socket.on('connected-sphero', () => {
     confirmButtonText: 'Let\'s explore!',
     confirmButtonColor: '#36B4C2',
     customClass: 'setup-modal'
-  },
-  () => {
+  }, () => {
     $(location).attr('pathname', '/move');
   });
-});
+}
+
+socket.on('connected-sphero', confirmConnect);
+socket.on('connected-bb8', confirmConnect);
 
 $('#connect-btn-sprk').on('click', () => {
   console.log('connecting to sprk');
@@ -36,5 +30,44 @@ $('#connect-btn-sprk').on('click', () => {
     showCancelButton: true,
     showConfirmButton: false,
     customClass: 'setup-modal'
+  }, function(isConfirm) {
+    if (!isConfirm) clearTimeout(idleTimeout);
   });
+  idleError($('#connect-btn-sprk'));
 });
+
+$('#connect-btn-bb8').on('click', () => {
+  console.log('connecting to bb8');
+  socket.emit('connect-btn-bb8');
+  setTimeout(() => {
+    socket.emit('connect-btn-bb8');
+  }, 2000);
+  swal({
+    title: 'Connecting to BB-8/Ollie...',
+    imageUrl: 'static/img/ripple.gif',
+    showCancelButton: true,
+    showConfirmButton: false,
+    customClass: 'setup-modal'
+  }, function(isConfirm) {
+    if (!isConfirm) clearTimeout(idleTimeout);
+  });
+  idleError($('#connect-btn-bb8'));
+});
+
+function idleError($btn) {
+  idleTimeout = setTimeout(() => {
+    swal({
+      title: 'Connection failed',
+      text: 'There is a problem connnecting to your Sphero. '
+        + 'Make sure your Bluetooth is on and your Sphero is awake.',
+      type: 'error',
+      confirmButtonText: 'Try again!',
+      confirmButtonColor: '#36B4C2',
+      showCancelButton: true,
+      customClass: 'setup-modal',
+      closeOnConfirm: false
+    }, () => {
+      $btn.trigger('click');
+    });
+  }, 7000);
+}

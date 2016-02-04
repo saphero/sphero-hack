@@ -4,9 +4,10 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const expect = chai.expect;
-const serverInst = require(__dirname + '/../server');
+const createAppServer = require(__dirname + '/../server');
 
 describe('UNIT: test the router endpoints', () => {
+  before(() => this.server = createAppServer(4000));
   it('should make a GET request at / (landing page)', (done) => {
     chai.request('localhost:3000')
       .get('/')
@@ -43,7 +44,16 @@ describe('UNIT: test the router endpoints', () => {
         done();
       });
   });
+  it('should make a GET request at /presets', (done) => {
+    chai.request('localhost:3000')
+      .get('/presets')
+      .end((err, res) => {
+        expect(err).to.eql(null);
+        expect(res).to.have.status(200);
+        done();
+      });
+  });
   after((done) => {
-    serverInst.close(done);
+    this.server.close(done);
   });
 });

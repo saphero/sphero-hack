@@ -1,9 +1,10 @@
-# sphero-hack
+# orbotix-hack
 #### A Code Fellows 401 Project by [Natalie Chow](https://github.com/xxnatc), [Sabrina Tee](https://github.com/sabbyt/), [Logan Tegman](https://github.com/ltegman), [Jose Tello](https://github.com/josectello) and [Jesse Thach](https://github.com/jessethach).
 
 ### Minimum Requirements
 - Bluetooth Classic (Bluetooth 2.0/3.0) enabled computer
-- A [Sphero 1.0/2.0](http://www.sphero.com/sphero) or [SPRK](http://www.sphero.com/education)
+- Currently only Mac compatible
+- A [Sphero 1.0/2.0](http://www.sphero.com/sphero), [SPRK](http://www.sphero.com/education), [BB-8](http://www.sphero.com/starwars) or [Ollie](http://www.sphero.com/ollie)
 
 ### Installation
 Download from npm:
@@ -13,17 +14,19 @@ npm install saphero
 Or clone directly from Github: [https://github.com/saphero/sphero-hack](https://github.com/saphero/sphero-hack)
 
 ### Getting Started
-- Pair Sphero via bluetooth (found in System Preferences > Bluetooth - but first ensure Sphero is not connected to any another device)
+- Pair Sphero or SPRK via bluetooth (found in System Preferences > Bluetooth - but first ensure Sphero/SPRK is not connected to any another device)
+- You do not need to pair BB-8 or Ollie devices
 - ```npm install```
 - ```gulp sass```
-- Launch ```node server.js```
-- Open browser at ```localhost:3000``` or at specified port
+- Launch ```npm start```
+- Open browser at ```localhost:3000``` (it should open automatically) and follow the instructions
 
 ### Features
-- Client-side dashboard for easy Sphero connection and control
+- Client-side dashboard for easy Sphero/SPRK/BB-8/Ollie connection and control
 - Back-end server that listens to your commands and sends them to your device
 - Connects and sets up a device at a click of a button!
-- Move your Sphero using keypress or a game controller
+- Move your device using keypress or a game controller
+- Graphs speed, acceleration and gyroscope
 - Preset basic commands and colors
 - Color picker
 
@@ -32,7 +35,7 @@ Device setup and connection page:
 ```
 localhost:3000
 ```
-Game controller and keypress control:
+<!-- Game controller and keypress control:
 ```
 /move
 ```
@@ -40,11 +43,21 @@ Preset colors and color picker:
 ```
 /color
 ```
-
+Preset commands:
+```
+/preset
+```
 About the contributors:
 ```
 /about
-```
+``` -->
+
+| Routes        | Description                          |
+| :-----------  | ------------------------------------ |
+| ```/move```   | Game controller and keypress control |
+| ```/color```  | Preset colors and color picker       |
+| ```/preset``` | Preset commands                      |
+| ```/about```  | About the contributors               |
 
 ### Acknowledgements & Modules Used
 - [express](https://www.npmjs.com/package/express)
@@ -55,11 +68,16 @@ About the contributors:
 - [noble](https://www.npmjs.com/package/noble)
 - [serialport](https://www.npmjs.com/package/serialport)
 - [socket.io](https://www.npmjs.com/package/socket.io)
+- [socket.io-client](https://www.npmjs.com/package/socket.io-client)
 - [sphero](https://www.npmjs.com/package/sphero)
-- [sweetalert](https://www.npmjs.com/package/sweetalert)
 
 ### Issues? Suggestions? Comments?
 Submit an issue on [Github](https://github.com/saphero/sphero-hack/issues).
+
+### Legal Notices
+This work is not endorsed by Orbotix.
+
+Trademarks are the property of their respective owners.
 
 ### License
 The MIT License (MIT).

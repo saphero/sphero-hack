@@ -90,7 +90,7 @@ module.exports = exports = (orb) => {
     keypress(process.stdin);
     process.stdin.on('keypress', handle);
 
-    console.log('Start controlling with keypress');
+    console.log('start controlling with keypress');
 
     process.stdin.setRawMode(true);
     process.stdin.resume();

@@ -1,17 +1,11 @@
-// "use strict";
-//
-// var sphero = require("../");
-// var orb = sphero(process.env.PORT);
-//
-// orb.connect(function() {
-//   setInterval(function() {
-//     var direction = Math.floor(Math.random() * 360);
-//     orb.roll(150, direction);
-//   }, 1000);
-// });
-//
-// var danceRandomHex = function() {
-//   var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
-// };
+'use strict';
 
-//randomColor function as an export
+module.exports = exports = (orb) => {
+  orb.color('yellow');
+  var count = 0;
+  return setInterval(() => {
+    var deg = count % 2 ? 0 : 180;
+    count++;
+    orb.roll(160, deg);
+  }, 100);
+};
