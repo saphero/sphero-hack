@@ -1,5 +1,16 @@
 'use strict';
 
+// redirects back to connect page if orb is not connected
+if (onControlPages() && typeof orb === 'undefined') {
+  $(location).attr('pathname', '/');
+}
+
+function onControlPages() {
+  var loc = $(location).attr('pathname').toLowerCase();
+  return ['/move', '/color', '/presets'].indexOf(loc) > -1;
+}
+
+
 function setBlueIcon($el) {
   var $img = $el.find('img');
   var path = $img.attr('src');
