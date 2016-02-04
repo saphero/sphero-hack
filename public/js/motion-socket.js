@@ -1,4 +1,5 @@
 'use strict';
+/* global io */
 
 var socket = io.connect('http://localhost:3000');
 var resetHeading = true;
@@ -6,34 +7,36 @@ toggleKeyControls();
 
 function toggleKeyControls() {
   window.onkeydown = (e) => {
-    switch (e.keyCode) {
-      case 37:
-        socket.emit('roll', { direction: 'left', resetHeading });
-        highlightBtn('#left-btn');
-        break;
-      case 38:
-        socket.emit('roll', { direction: 'up', resetHeading });
-        highlightBtn('#up-btn');
-        break;
-      case 39:
-        socket.emit('roll', { direction: 'right', resetHeading });
-        highlightBtn('#right-btn');
-        break;
-      case 40:
-        socket.emit('roll', { direction: 'down', resetHeading });
-        highlightBtn('#down-btn');
-        break;
-      case 79:
-        socket.emit('speed', 'down');
-        highlightBtn('#slow-btn');
-        break;
-      case 80:
-        socket.emit('speed', 'up');
-        highlightBtn('#fast-btn');
-        break;
-      default:
+    if (resetHeading) {
+      switch (e.keyCode) {
+        case 37:
+          socket.emit('roll', { direction: 'left', resetHeading });
+          highlightBtn('#left-btn');
+          break;
+        case 38:
+          socket.emit('roll', { direction: 'up', resetHeading });
+          highlightBtn('#up-btn');
+          break;
+        case 39:
+          socket.emit('roll', { direction: 'right', resetHeading });
+          highlightBtn('#right-btn');
+          break;
+        case 40:
+          socket.emit('roll', { direction: 'down', resetHeading });
+          highlightBtn('#down-btn');
+          break;
+        case 79:
+          socket.emit('speed', 'down');
+          highlightBtn('#slow-btn');
+          break;
+        case 80:
+          socket.emit('speed', 'up');
+          highlightBtn('#fast-btn');
+          break;
+        default:
+      }
+      resetHeading = false;
     }
-  resetHeading = false;
   };
   window.onkeyup = () => {
     socket.emit('roll', { direction: 'stop' });
@@ -49,7 +52,6 @@ function highlightBtn(btnId) {
 }
 
 socket.on('speedometer', (data) => {
-  console.log(data);
   $.plot($('#speed_graph'), data, {
     yaxis: {
       min: 0
@@ -59,6 +61,7 @@ socket.on('speedometer', (data) => {
     }
   });
 });
+
 socket.on('accelerometer', (data) => {
   $.plot($('#accel_graph'), data, {
     yaxis: {
@@ -70,6 +73,14 @@ socket.on('accelerometer', (data) => {
       max: 2500
     },
     points: {
+      show: true
+    }
+  });
+});
+socket.on('gyroscope', (data) => {
+  $.plot($('gyro_graph'), data, {
+    d1: true,
+    bars: {
       show: true
     }
   });

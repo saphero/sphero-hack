@@ -12,6 +12,5 @@ module.exports = exports = (orb, socket) => {
       dataArr[0].push([data.xAccel.value[0], data.yAccel.value[0]]);
     }
     socket.emit('accelerometer', dataArr);
-    console.log(dataArr);
   });
 };

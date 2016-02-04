@@ -15,11 +15,11 @@ Or clone directly from Github: [https://github.com/saphero/sphero-hack](https://
 
 ### Getting Started
 - Pair Sphero or SPRK via bluetooth (found in System Preferences > Bluetooth - but first ensure Sphero/SPRK is not connected to any another device)
-- You do not need to pair BB-8 or Ollie device
+- You do not need to pair BB-8 or Ollie devices
 - ```npm install```
 - ```gulp sass```
-- Launch ```node server.js```
-- Open browser at ```localhost:3000``` or at specified port and follow the instructions
+- Launch ```npm start```
+- Open browser at ```localhost:3000``` (it should open automatically) and follow the instructions
 
 ### Features
 - Client-side dashboard for easy Sphero/SPRK/BB-8/Ollie connection and control
@@ -66,6 +66,11 @@ About the contributors:
 
 ### Issues? Suggestions? Comments?
 Submit an issue on [Github](https://github.com/saphero/sphero-hack/issues).
+
+### Legal Notices
+This work is not endorsed by Orbotix.
+
+Trademarks are the property of their respective owners.
 
 ### License
 The MIT License (MIT).

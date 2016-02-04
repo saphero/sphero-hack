@@ -21,10 +21,6 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('sass_watch', () => {
-  gulp.watch('./public/scss/**/*.scss', ['sass']);
-});
-
 gulp.task('pre-test', () => {
   return gulp.src(['lib/*.js', 'commands/*.js'])
     .pipe(istanbul())
@@ -39,7 +35,8 @@ gulp.task('test', ['pre-test'], () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(files, ['sass', 'lint', 'test']);
+  gulp.watch(files, ['lint', 'test']);
+  gulp.watch('./public/scss/**/*.scss', ['sass']);
 });
 
-gulp.task('default', ['watch', 'lint', 'test']);
+gulp.task('default', ['watch', 'sass', 'lint', 'test']);
