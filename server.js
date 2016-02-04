@@ -20,11 +20,11 @@ module.exports = exports = (port, openBrowser) => {
   var orb;
   socketListeners(io, orb);
 
-  var serverInst = server.listen(3000, () => {
-    console.log('server running on port 3000');
+  var serverInst = server.listen(port, () => {
+    console.log('server running on port ' + port);
   });
 
-  if (openBrowser) opn('http://localhost:3000');
+  if (openBrowser) opn('http://localhost:' + port);
 
   return serverInst;
 };

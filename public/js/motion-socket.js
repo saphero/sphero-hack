@@ -5,6 +5,7 @@ var socket = io.connect('http://localhost:3000');
 var resetHeading = true;
 
 window.onkeydown = (e) => {
+  e.preventDefault();
   if (resetHeading) {
     switch (e.keyCode) {
       case 37:
@@ -74,12 +75,3 @@ socket.on('accelerometer', (data) => {
     }
   });
 });
-
-// socket.on('gyroscope', (data) => {
-//   $.plot($('gyro_graph'), data, {
-//     d1: true,
-//     bars: {
-//       show: true
-//     }
-//   });
-// });

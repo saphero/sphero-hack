@@ -1,9 +1,8 @@
 'use strict';
 
 module.exports = exports = (orb) => {
-  orb.connect(() => {
-    orb.detectCollisions({ device: 'bb8' });
-    orb.color('yellow');
+    orb.detectCollisions();
+    orb.color('teal');
 
     orb.on('collision', (data) => {
       console.log('collision detected');
@@ -12,10 +11,9 @@ module.exports = exports = (orb) => {
       orb.color('red');
 
       setTimeout(() => {
-        orb.color('green');
+        orb.color('orange');
       }, 1000);
     });
 
     orb.roll(155, 0);
-  });
 };
