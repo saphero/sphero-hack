@@ -30,7 +30,7 @@ $('#connect-btn-sprk').on('click', () => {
     showCancelButton: true,
     showConfirmButton: false,
     customClass: 'setup-modal'
-  }, function(isConfirm) {
+  }, (isConfirm) => {
     if (!isConfirm) clearTimeout(idleTimeout);
   });
   idleError($('#connect-btn-sprk'));
@@ -48,7 +48,7 @@ $('#connect-btn-bb8').on('click', () => {
     showCancelButton: true,
     showConfirmButton: false,
     customClass: 'setup-modal'
-  }, function(isConfirm) {
+  }, (isConfirm) => {
     if (!isConfirm) clearTimeout(idleTimeout);
   });
   idleError($('#connect-btn-bb8'));

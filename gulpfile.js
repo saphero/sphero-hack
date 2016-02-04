@@ -30,8 +30,7 @@ gulp.task('pre-test', () => {
 gulp.task('test', ['pre-test'], () => {
   return gulp.src('test/*.spec.js')
     .pipe(mocha())
-    .pipe(istanbul.writeReports())
-    .pipe(istanbul.enforceThresholds({ thresholds: { global: 70 } }));
+    .pipe(istanbul.writeReports());
 });
 
 gulp.task('watch', () => {

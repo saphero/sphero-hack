@@ -7,9 +7,10 @@ const expect = require('chai').expect;
 const lights = require(__dirname + '/../commands/lights');
 const look = require(__dirname + '/../commands/look');
 const moveRandom = require(__dirname + '/../commands/move-random');
+const dance = require(__dirname + '/../commands/dance');
 const gyroscope = require(__dirname + '/../commands/gyroscope');
 const accelerometer = require(__dirname + '/../commands/accelerometer');
-const dance = require(__dirname + '/../commands/dance');
+const speedometer = require(__dirname + '/../commands/speedometer');
 
 describe('sphero commands', () => {
   it('lights.rainbow should send color commands', (done) => {
@@ -45,7 +46,7 @@ describe('sphero commands', () => {
       expect(this.called).to.eql(2);
       clearInterval(testInterval);
       done();
-    }, 500);
+    }, 100);
   });
 
   it('should turn on gyroscope', () => {
@@ -55,6 +56,11 @@ describe('sphero commands', () => {
 
   it('should turn on accelerometer', () => {
     accelerometer(this.testOrb);
+    expect(this.called).to.eql(2);
+  });
+
+  it('should turn on speedometer', () => {
+    speedometer(this.testOrb);
     expect(this.called).to.eql(2);
   });
 

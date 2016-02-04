@@ -1,4 +1,7 @@
 'use strict';
+/* global socket highlightBtn */
+
+var resetHeading = true;
 
 window.addEventListener('gamepadconnected', () => {
   console.log('Gamepad connected');
