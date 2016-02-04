@@ -12,13 +12,11 @@ module.exports = exports = (orb, socket) => {
     } else {
       var speed = Math.sqrt(Math.pow(data.xVelocity.value[0], 2),
         Math.pow(data.yVelocity.value[0], 2));
-      console.log(speed);
       dataArr[0].push([count, speed]);
     }
     if (dataArr[0].length > 50) {
       dataArr[0] = dataArr[0].slice(dataArr[0].length - 50);
     }
-    console.log(dataArr[0].length);
     count++;
     socket.emit('speedometer', dataArr);
   });

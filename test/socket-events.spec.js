@@ -16,7 +16,7 @@ describe('socket listener tests', () => {
     this.io = require('socket.io')(this.server);
 
     this.server.listen(5000, () => {
-      console.log('Server running on port 5000');
+      console.log('server running on port 5000');
     });
 
     this.orb = {

@@ -19,7 +19,7 @@ var orb;
 socketListeners(io, orb);
 
 var serverInst = server.listen(3000, () => {
-  console.log('Server running on port 3000');
+  console.log('server running on port 3000');
 });
 
 module.exports = exports = serverInst;

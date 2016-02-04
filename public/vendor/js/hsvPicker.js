@@ -54,7 +54,6 @@ var hsvPicker = function(defaultColor, presetColors, callback) {
 		var target = e.target || e.srcElement;
 		if (target.parentNode === this) {
       myColor.setColor(target.style.backgroundColor);
-      // console.log(myColor.colors.HEX);
       callback(myColor.colors);
 			startRender(true);
 		}
@@ -134,7 +133,6 @@ var hsvPicker = function(defaultColor, presetColors, callback) {
 		Tools.removeEvent(window, 'mousemove', hsvMove);
 		hsv_map.className = '';
 		stopRender();
-    // console.log(myColor.colors.HEX);
     callback(myColor.colors);
 	});
 
