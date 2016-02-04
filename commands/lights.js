@@ -1,7 +1,6 @@
 'use strict';
 
 exports.rainbow = (orb) => {
-  console.log('command: rainbow');
   var frequency = 0.3;
   var r, g, b;
   var count = 0;
@@ -20,7 +19,6 @@ exports.rainbow = (orb) => {
 };
 
 exports.xmas = (orb) => {
-  console.log('command: xmas');
   var count = 0;
   orb.color('red');
   return setInterval(() => {
@@ -40,7 +38,6 @@ exports.xmas = (orb) => {
 };
 
 exports.disco = (orb) => {
-  console.log('command: disco');
   var count = 0;
   return setInterval(() => {
     if (count % 2) {
