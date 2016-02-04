@@ -1,7 +1,5 @@
 'use strict';
 
-/* eslint-disable no-unused-expressions */
-
 const expect = require('chai').expect;
 const lights = require(__dirname + '/../commands/lights');
 const look = require(__dirname + '/../commands/look');
