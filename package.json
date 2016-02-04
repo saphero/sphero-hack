@@ -2,7 +2,7 @@
   "name": "sphero-hack",
   "version": "1.0.0",
   "description": "Code Fellows 401 Project Week 1",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test"
   },
