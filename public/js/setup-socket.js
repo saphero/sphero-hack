@@ -1,7 +1,6 @@
 'use strict';
 
 var socket = io.connect('http://localhost:3000');
-/* eslint-enable no-undef */
 var idleTimeout;
 
 function confirmConnect() {
@@ -33,7 +32,7 @@ function idleError($btn) {
       $btn.trigger('click');
     });
   }, 7000);
-};
+}
 
 socket.on('connected-sphero', confirmConnect);
 socket.on('connected-bb8', confirmConnect);

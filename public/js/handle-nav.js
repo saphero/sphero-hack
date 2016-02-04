@@ -1,7 +1,5 @@
 'use strict';
 
-// redirects back to connect page if orb is not connected
-
 function setBlueIcon($el) {
   var $img = $el.find('img');
   var path = $img.attr('src');

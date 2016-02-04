@@ -30,6 +30,6 @@ var presetColors = [
 ];
 
 hsvPicker(defaultColor, presetColors, (colorObj) => {
-  console.log(colorObj.HEX);
+  console.log('color: ' + colorObj.HEX);
   socket.emit('color', colorObj.HEX);
 });

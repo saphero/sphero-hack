@@ -5,7 +5,6 @@ module.exports = exports = (orb, socket) => {
   orb.streamAccelerometer();
 
   orb.on('accelerometer', (data) => {
-    console.log('accelerometer: ');
     var dataArr = [[]];
     if (!data.xAccel.value[0] || !data.yAccel.value[0]) {
       dataArr[0].push([0, 0]);

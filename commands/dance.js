@@ -7,6 +7,6 @@ module.exports = exports = (orb) => {
   return setInterval(() => {
     var deg = count % 2 ? 0 : 180;
     count++;
-    orb.roll(250, deg);
-  }, 500);
+    orb.roll(160, deg);
+  }, 100);
 };
