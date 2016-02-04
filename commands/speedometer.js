@@ -7,6 +7,7 @@ module.exports = exports = (orb, socket) => {
   var count = 0;
 
   orb.on('velocity', (data) => {
+    console.log('velocity: ');
     if (!data.xVelocity.value[0] || !data.yVelocity.value[0]) {
       dataArr[0].push([count, 0]);
     } else {

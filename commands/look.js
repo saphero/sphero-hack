@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = exports = (orb) => {
-  console.log('Command: move-head');
+  console.log('command: look');
   orb.color('red');
   return setInterval(() => {
-    var moveHead = Math.floor(Math.random() * 180);
-    orb.roll(0, moveHead);
+    var look = Math.floor(Math.random() * 180);
+    orb.roll(0, look);
   }, 500);
 };

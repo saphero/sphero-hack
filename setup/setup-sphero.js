@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 module.exports = exports = (cb) => {
-  console.log('Beginning setup');
+  console.log('beginning setup');
   const spheroFile = 'tty.Sphero';
   fs.readdir('/dev', (err, files) => {
     if (err) return console.log(err);
@@ -12,7 +12,7 @@ module.exports = exports = (cb) => {
       SPHERO_ID: matchy[0]
     });
     config.save();
-    console.log('Info saved to ~/.spheroconfig');
+    console.log('saved config file to ~/.spheroconfig');
     cb();
   });
 };
