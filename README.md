@@ -54,7 +54,6 @@ About the contributors:
 
 ### Acknowledgements & Modules Used
 - [express](https://www.npmjs.com/package/express)
-- [gulp-istanbul](https://www.npmjs.com/package/gulp-istanbul)
 - [home-config](https://www.npmjs.com/package/home-config)
 - [jade](https://www.npmjs.com/package/jade)
 - [keypress](https://www.npmjs.com/package/keypress)
@@ -64,7 +63,6 @@ About the contributors:
 - [socket.io](https://www.npmjs.com/package/socket.io)
 - [socket.io-client](https://www.npmjs.com/package/socket.io-client)
 - [sphero](https://www.npmjs.com/package/sphero)
-- [sweetalert](https://www.npmjs.com/package/sweetalert)
 
 ### Issues? Suggestions? Comments?
 Submit an issue on [Github](https://github.com/saphero/sphero-hack/issues).
