@@ -50,7 +50,6 @@ window.addEventListener('gamepadbuttonup', (e) => {
   resetHeading = true;
 });
 
-// ========== joystick controls ==========
 var leftX = 0, leftY = 0;
 var rightX = 0, rightY = 0;
 
@@ -75,17 +74,17 @@ window.addEventListener('gamepadaxismove', (e) => {
   // Right joystick: x-axis is #2, y-axis is #5 (reversed)
   // Right joystick is set to control direction
   if ([2, 5].indexOf(e.axis) > -1) {
-    let x = Math.abs(e.gamepad.axes[2].toFixed(3));
-    let y = Math.abs(e.gamepad.axes[5].toFixed(3));
-    if (x - rightX > 0.2 || y - rightY > 0.2) {
+    let x = e.gamepad.axes[2].toFixed(3);
+    let y = e.gamepad.axes[5].toFixed(3);
+    if (Math.abs(x - rightX) > 0.55 || Math.abs(y - rightY) > 0.55) {
       console.log('Axes move', e.axis, e.value, x, y);
       rightX = x;
       rightY = y;
-    } else if (rightX > x || rightY > y) {
-      rightX = x;
-      rightY = y;
+      let deg = Math.round(Math.atan2(y, x) * 180 / Math.PI) + 90;
+      if (deg < 0) deg += 360;
+      console.log(deg);
+      socket.emit('free-roll', { deg: deg });
     }
-    // ...
   }
 });
 
