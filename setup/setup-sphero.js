@@ -8,11 +8,9 @@ module.exports = exports = (cb) => {
   fs.readdir('/dev', (err, files) => {
     if (err) return console.log(err);
     var matchy = files.filter(file => file.indexOf(spheroFile) === 0);
-    /* eslint-disable camelcase */
     const config = require('home-config').load('.spheroconfig', {
       SPHERO_ID: matchy[0]
     });
-    /* eslint-enable camelcase */
     config.save();
     console.log('Info saved to ~/.spheroconfig');
     cb();

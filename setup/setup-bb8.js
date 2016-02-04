@@ -22,8 +22,6 @@ module.exports = exports = (callback) => {
       callback();
     } else {
       console.log('Searching...');
-      // console.log('UUID: ' + peripheral.uuid);
-      // console.log('Local Name: ' + peripheral.advertisement.localName);
     }
   });
 };
