@@ -58,8 +58,12 @@ function idleError($btn) {
   idleTimeout = setTimeout(() => {
     swal({
       title: 'Connection failed',
+<<<<<<< HEAD
       text: 'There is a problem connnecting to your Sphero. '
         + 'Make sure your Bluetooth is on and your Sphero is awake.',
+=======
+      text: 'There is a problem connnecting to your Sphero. Make sure your Bluetooth is on and your Sphero is awake.',
+>>>>>>> 4131583e0ec8d335ab8828ca7def09c5d5c58b65
       type: 'error',
       confirmButtonText: 'Try again!',
       confirmButtonColor: '#36B4C2',
