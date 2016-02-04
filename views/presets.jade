@@ -1,0 +1,56 @@
+include ./partials/_layout
+include ./partials/_navigation
+script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js')
+
+.content
+  h1.page-header Presets Library
+  .row.card-container
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Rainbow
+        p Flashes light with rainbow colors
+        button.btn.shading(data-preset='rainbow') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header X'mas
+        p Flashes red and green light
+        button.btn.shading(data-preset='xmas') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Disco
+        p Flashes random lights
+        button.btn.shading(data-preset='disco') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Dance Party
+        p Twerks
+        button.btn.shading(data-preset='dance') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Shifty
+        p Stays in the same position and turns its head
+        button.btn.shading(data-preset='look') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Indecisive
+        p Travels in a random direction every second
+        button.btn.shading(data-preset='move-random') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Fly
+        p Flies in purple and on landing, changes to red
+        button.btn.shading(data-preset='fly') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Magic 8 Ball
+        p Shake and ask a question - red: no, yellow: maybe and green: yes!
+        button.btn.shading(data-preset='magic8') Run
+    .col-xs-6.col-md-4.col-lg-3
+      .card 
+        h3.card-header Detect Collision
+        p This little ball is smart enough to not run into walls
+        button.btn.shading(data-preset='collision') Run
+  .row
+    button#stop-btn Clear
+  
+script(type='text/javascript', src='static/js/presets.js')

@@ -1,0 +1,36 @@
+.connect-panel {
+  text-align: center;
+  img {
+    display: block;
+    margin: 0px auto 20px auto;
+    max-width: 200px;
+  }
+  button.btn, input.btn {
+    font-family: $header-font-family;
+    letter-spacing: 0.4px;
+    font-weight: bold;
+    min-width: 100px;
+  }
+}
+.connect-req {
+  text-align: left;
+  color: $tert-color-slate;
+  li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+}
+.sweet-alert.setup-modal {
+  h2 {
+    font-family: $header-font-family;
+    color: $base-color-blue;
+    margin-bottom: 10px;
+  }
+  fieldset {
+    display: none;
+  }
+  .sa-button-container button.cancel {
+    background-color: $base-color-slate;
+    font-weight: normal;
+  }
+}
