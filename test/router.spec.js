@@ -43,6 +43,15 @@ describe('UNIT: test the router endpoints', () => {
         done();
       });
   });
+  it('should make a GET request at /presets', (done) => {
+    chai.request('localhost:3000')
+      .get('/presets')
+      .end((err, res) => {
+        expect(err).to.eql(null);
+        expect(res).to.have.status(200);
+        done();
+      });
+  });
   after((done) => {
     serverInst.close(done);
   });
