@@ -59,7 +59,8 @@ function idleError($btn) {
     swal({
       title: 'Connection failed',
       text: 'There is a problem connnecting to your Sphero. '
-        + 'Make sure your Bluetooth is on and your Sphero is awake.',
+        + 'Make sure your Bluetooth is on and your Sphero is awake.'
+        + 'Try restarting the server if you keep getting this error.',
       type: 'error',
       confirmButtonText: 'Try again!',
       confirmButtonColor: '#36B4C2',
@@ -69,5 +70,5 @@ function idleError($btn) {
     }, () => {
       $btn.trigger('click');
     });
-  }, 7000);
+  }, 10000);
 }
