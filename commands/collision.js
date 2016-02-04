@@ -1,17 +1,17 @@
 'use strict';
 
 module.exports = exports = (orb) => {
-  orb.connect(function() {
+  orb.connect(() => {
     orb.detectCollisions();
     orb.color('green');
 
-    orb.on('collision', function(data) {
+    orb.on('collision', (data) => {
       console.log('collision detected');
       console.log('  data:', data);
 
       orb.color('red');
 
-      setTimeout(function() {
+      setTimeout(() => {
         orb.color('green');
       }, 1000);
     });
