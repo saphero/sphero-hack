@@ -35,7 +35,7 @@ Device setup and connection page:
 ```
 localhost:3000
 ```
-Game controller and keypress control:
+<!-- Game controller and keypress control:
 ```
 /move
 ```
@@ -50,7 +50,14 @@ Preset commands:
 About the contributors:
 ```
 /about
-```
+``` -->
+
+| Routes        | Description                          |
+| :-----------  | ------------------------------------ |
+| ```/move```   | Game controller and keypress control |
+| ```/color```  | Preset colors and color picker       |
+| ```/preset``` | Preset commands                      |
+| ```/about```  | About the contributors               |
 
 ### Acknowledgements & Modules Used
 - [express](https://www.npmjs.com/package/express)
