@@ -2,9 +2,9 @@
   "name": "saphero",
   "version": "1.0.0",
   "description": "A Client-Side Dashboard to Easily Connect and Control Sphero/BB-8/Ollie Devices",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node bin/index.js",
     "test": "./node_modules/mocha/bin/mocha test"
   },
   "repository": {
