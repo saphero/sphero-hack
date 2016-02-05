@@ -8,5 +8,5 @@ $('.card').on('click', 'button', function() {
 });
 
 $('#stop-btn').on('click', () => {
-  socket.emit('roll', { direction: 'stop' });
+  socket.emit('clear-preset');
 });
