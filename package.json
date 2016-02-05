@@ -1,7 +1,7 @@
 {
-  "name": "sphero-hack",
-  "version": "0.1.0",
-  "description": "Code Fellows 401 Project Week 1",
+  "name": "saphero",
+  "version": "0.1.1",
+  "description": "A Client-Side Dashboard to Easily Connect and Control Sphero/BB-8/Ollie Devices",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
