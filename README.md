@@ -1,17 +1,17 @@
-#saphero
+# saphero
 
-## an orbotix-hack
+### an orbotix-hack
 
-#### A Client-Side Dashboard to Easily Connect and Control Sphero/BB-8/Ollie Devices
+### _Client-Side Dashboard to Easily Connect and Control Sphero/BB-8/Ollie Devices_
 
-#### A [Code Fellows](https://www.codefellows.org/) 401 Project by [Natalie Chow](https://github.com/xxnatc), [Sabrina Tee](https://github.com/sabbyt/), [Logan Tegman](https://github.com/ltegman), [Jose Tello](https://github.com/josectello) and [Jesse Thach](https://github.com/jessethach).
+A [Code Fellows](https://www.codefellows.org/) 401 Project by [Natalie Chow](https://github.com/xxnatc), [Sabrina Tee](https://github.com/sabbyt/), [Logan Tegman](https://github.com/ltegman), [Jose Tello](https://github.com/josectello) and [Jesse Thach](https://github.com/jessethach).
 
 ![Control Page](/public/img/setup-screenshot.png)
 
 ### Minimum Requirements
 - For Sphero 1.0/2.0/SPRK models: Bluetooth Classic (Bluetooth 2.0/3.0) enabled computer
 - For BB-8/Ollie models: Bluetooth Low Energy (Bluetooth LE/Bluetooth Smart/Bluetooth 4.0/4.1) enabled computer
-- Currently only Mac OS X platform compatible
+- Currently only Mac (OS X) platform compatible
 - [Xcode](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12)
 - A [Sphero 1.0/2.0](http://www.sphero.com/sphero), [SPRK](http://www.sphero.com/education), [BB-8](http://www.sphero.com/starwars) or [Ollie](http://www.sphero.com/ollie)
 
@@ -20,15 +20,12 @@ Download from npm:
 ```
 npm install saphero
 ```
-Or clone directly from Github: [https://github.com/saphero/sphero-hack](https://github.com/saphero/sphero-hack)
+Or clone directly from GitHub: [https://github.com/saphero/sphero-hack](https://github.com/saphero/sphero-hack)
 
 ### Getting Started
-- Pair Sphero or SPRK via bluetooth (found in System Preferences > Bluetooth - but first ensure Sphero/SPRK is not connected to any another device)
-- You do not need to pair BB-8 or Ollie devices
-- ```npm install```
-- ```gulp sass```
-- Launch ```npm start```
-- Open browser at ```localhost:3000``` (it should open automatically) and follow the instructions
+- Pair Sphero or SPRK via Bluetooth (found in System Preferences > Bluetooth - but first ensure Sphero/SPRK is not connected to any another device); you do not need to pair BB-8 or Ollie devices
+- Launch app from command line by typing ```saphero```
+- Open browser at ```localhost:3000``` (it should launch automatically in default browser) and follow the instructions
 
 ### Features
 - Client-side dashboard for easy Sphero/SPRK/BB-8/Ollie connection and control
@@ -41,13 +38,14 @@ Or clone directly from Github: [https://github.com/saphero/sphero-hack](https://
 
 ### Game Controller
 - Install the [Firefox Nightly](https://nightly.mozilla.org/) browser
-- Launch server ```npm start```
-- Connect device
-- Plugin a game controller and ensure you are on the ```/move``` page
-- Use arrow buttons or right joystick to control the direction of device
-- ◯ and R1 increases speed
-- ▢ and L1 decreases speed
-- Left joystick changes color based on the color picker
+- Launch app from command line by typing ```saphero```
+- Follow app instructions to connect device
+- Plugin a game controller via USB (currently supports PlayStation controllers only)
+- Control your device one the ```/move``` page:
+  - Change color: left joystick
+  - Directions: arrow buttons or right joystick
+  - Increase speed: ◯ or R1
+  - Decrease speed: ▢ or L1
 
 ### Routes
 Device setup and connection page:
@@ -74,9 +72,9 @@ localhost:3000
 - [sphero](https://www.npmjs.com/package/sphero)
 
 ### Issues? Suggestions? Comments?
-Submit an issue on [Github](https://github.com/saphero/sphero-hack/issues).
+Submit an issue on [GitHub](https://github.com/saphero/sphero-hack/issues).
 
-Checkout out our [Developer's Notes](https://github.com/saphero/sphero-hack/blob/master/DEV_NOTES.md).
+Check out our [Developer's Notes](https://github.com/saphero/sphero-hack/blob/master/DEV_NOTES.md).
 
 ### Legal Notices
 This work is not endorsed by Orbotix.
