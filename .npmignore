@@ -1,0 +1,6 @@
+**/*.sw?
+**/node_modules
+.DS_Store
+**/*.log
+db/
+coverage/
