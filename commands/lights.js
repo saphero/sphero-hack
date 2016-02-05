@@ -8,7 +8,6 @@ exports.rainbow = (orb) => {
     r = Math.floor(Math.sin(frequency * count + 0) * 127 + 128);
     g = Math.floor(Math.sin(frequency * count + 2) * 127 + 128);
     b = Math.floor(Math.sin(frequency * count + 4) * 127 + 128);
-    console.log(r, g, b);
     count++;
     if (count === 32) count = 0;
   }
@@ -24,13 +23,11 @@ exports.xmas = (orb) => {
   return setInterval(() => {
     if (count === 0) {
       orb.color('green');
-      console.log('green');
       count = 1;
       return count;
     }
     if (count === 1) {
       orb.color('red');
-      console.log('red');
       count = 0;
       return count;
     }

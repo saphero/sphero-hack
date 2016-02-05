@@ -8,4 +8,4 @@
 
 - Intermittent Bluetooth connectivity issues when other paired devices are on.
 
-- BB-8 connection doesn't work according to Sphero module - firstly, orb.connect() does not run and we had to take additional steps to save the orb object. Also, when connecting, we have to emit setupDevice() twice.
+- BB-8 connection doesn't work according to Sphero module - firstly, ```orb.connect()``` does not run and we had to take additional steps to save the orb object. Also, when connecting, we have to emit ```setupDevice()``` twice.
