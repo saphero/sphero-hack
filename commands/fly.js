@@ -3,11 +3,11 @@
 module.exports = exports = (orb) => {
   orb.detectFreefall();
 
-  orb.on('freefall', (data) => {
+  orb.on('freefall', () => {
     orb.color('purple');
   });
 
-  orb.on('landed', (data) => {
+  orb.on('landed', () => {
     orb.color('red');
   });
 };

@@ -21,7 +21,7 @@ describe('sphero commands', () => {
       expect(this.called).to.eql(1);
       clearInterval(testInterval);
       done();
-    }, 100);
+    }, 250);
   });
 
   it('lights.disco should send multiple commands', (done) => {
@@ -67,7 +67,7 @@ describe('sphero commands', () => {
 
   it('magic 8 should change colors and start listening', () => {
     magic8(this.testOrb);
-    expect(this.called).to.eql(3);
+    expect(this.called).to.eql(2);
   });
 
   it('collision should change colors, start listening, and roll', () => {

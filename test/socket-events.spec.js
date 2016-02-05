@@ -5,7 +5,7 @@
 
 const expect = require('chai').expect;
 const socketListeners = require(__dirname + '/../lib/socket-listeners');
-require(__dirname + '/../server');
+require(__dirname + '/../lib/server');
 
 describe('socket listener tests', () => {
 
