@@ -1,4 +1,6 @@
-# orbotix-hack
+#saphero
+
+## an orbotix-hack
 
 #### A Client-Side Dashboard to Easily Connect and Control Sphero/BB-8/Ollie Devices
 

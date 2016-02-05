@@ -4,15 +4,14 @@
 var resetHeading = true;
 
 window.addEventListener('gamepadconnected', () => {
-  console.log('Gamepad connected');
+  console.log('gamepad connected');
 });
 
 window.addEventListener('gamepaddisconnected', () => {
-  console.log('Gamepad disconnected');
+  console.log('gamepad disconnected');
 });
 
 window.addEventListener('gamepadbuttondown', (e) => {
-  console.log('Button down: ' + e.button);
   switch (e.button) {
     case 14:
       socket.emit('roll', { direction: 'up', resetHeading });
@@ -45,7 +44,6 @@ window.addEventListener('gamepadbuttondown', (e) => {
 });
 
 window.addEventListener('gamepadbuttonup', (e) => {
-  console.log('Button up: ' + e.button);
   socket.emit('roll', { direction: 'stop' });
   resetHeading = true;
 });
@@ -60,13 +58,11 @@ window.addEventListener('gamepadaxismove', (e) => {
     let x = e.gamepad.axes[0].toFixed(3);
     let y = e.gamepad.axes[1].toFixed(3) * -1;
     if (Math.abs(x - leftX) > 0.45 || Math.abs(y - leftY) > 0.45) {
-      console.log('Axes move', e.axis, e.value, x, y);
       leftX = x;
       leftY = y;
       let hue = Math.round(Math.atan2(y, x) * 180 / Math.PI);
       if (hue < 0) hue += 360;
       var hex = hsvToHex({ hue: hue, sat: 0.9, val: 0.9 });
-      console.log(hex);
       socket.emit('color', hex);
     }
   }
@@ -77,12 +73,10 @@ window.addEventListener('gamepadaxismove', (e) => {
     let x = e.gamepad.axes[2].toFixed(3);
     let y = e.gamepad.axes[5].toFixed(3);
     if (Math.abs(x - rightX) > 0.55 || Math.abs(y - rightY) > 0.55) {
-      console.log('Axes move', e.axis, e.value, x, y);
       rightX = x;
       rightY = y;
       let deg = Math.round(Math.atan2(y, x) * 180 / Math.PI) + 90;
       if (deg < 0) deg += 360;
-      console.log(deg);
       socket.emit('free-roll', { deg: deg });
     }
   }

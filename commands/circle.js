@@ -7,6 +7,5 @@ module.exports = exports = (orb) => {
     orb.roll(100, counter);
     counter = counter + 15;
     if (counter >= 360) return;
-    console.log(counter);
   }, 500);
 };
