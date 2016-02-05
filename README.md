@@ -82,4 +82,4 @@ This work is not endorsed by Orbotix.
 Trademarks are the property of their respective owners.
 
 ### License
-MIT Licensed. For more details, see the LICENSE file.
+MIT Licensed. For more details, see the [LICENSE](https://github.com/saphero/sphero-hack/blob/master/LICENSE.md) file.
