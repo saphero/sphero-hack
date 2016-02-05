@@ -29,13 +29,13 @@ window.addEventListener('gamepadbuttondown', (e) => {
       socket.emit('roll', { direction: 'right', resetHeading });
       highlightBtn('#right-btn');
       break;
-    case 0: // square
-    case 4: // L1
+    case 0:
+    case 4:
       socket.emit('speed', 'down');
       highlightBtn('#slow-btn');
       break;
-    case 2: // circle
-    case 5: // R1
+    case 2:
+    case 5:
       socket.emit('speed', 'up');
       highlightBtn('#fast-btn');
       break;
@@ -43,7 +43,7 @@ window.addEventListener('gamepadbuttondown', (e) => {
   }
 });
 
-window.addEventListener('gamepadbuttonup', (e) => {
+window.addEventListener('gamepadbuttonup', () => {
   socket.emit('roll', { direction: 'stop' });
   resetHeading = true;
 });

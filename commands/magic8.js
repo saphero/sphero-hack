@@ -1,8 +1,6 @@
 'use strict';
 var start = false;
 module.exports = exports = (orb) => {
-  orb.color('purple');
-
   orb.streamVelocity();
 
   orb.on('velocity', (data) => {

@@ -1,10 +1,10 @@
 {
   "name": "saphero",
-  "version": "0.3.0",
+  "version": "1.0.1",
   "description": "A Client-Side Dashboard to Easily Connect and Control Sphero/BB-8/Ollie Devices",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node bin/index.js",
     "test": "./node_modules/mocha/bin/mocha test"
   },
   "repository": {
@@ -25,12 +25,12 @@
     "ollie",
     "sprk"
   ],
-  "author": { "name": "Sabrina Tee" },
+  "author": { "name": "Sabrina Tee", "email": "sabrinatee@me.com" },
   "contributors": [
-    { "name": "Natalie Chow" },
+    { "name": "Natalie Chow", "email": "cychownat@gmail.com" },
     { "name": "Logan Tegman", "email": "ltegman@gmail.com", "url": "http://logantegman.io" },
-    { "name": "Jose Tello" },
-    { "name": "Jesse Thatch", "url": "https://about.me/jessethach"}
+    { "name": "Jose Tello", "email": "josectello@gmail.com" },
+    { "name": "Jesse Thach", "email": "jessethach@gmail.com", "url": "https://about.me/jessethach"}
   ],
   "license": "MIT",
   "bugs": {
