@@ -24,7 +24,7 @@ Or clone directly from GitHub: [https://github.com/saphero/sphero-hack](https://
 
 ### Getting Started
 - Pair Sphero or SPRK via Bluetooth (found in System Preferences > Bluetooth - but first ensure Sphero/SPRK is not connected to any another device); you do not need to pair BB-8 or Ollie devices
-- Launch app from command line by typing ```saphero```
+- Launch app from command line by typing ```saphero``` (use ```npm start``` if you cloned from GitHub)
 - Open browser at ```localhost:3000``` (it should launch automatically in default browser) and follow the instructions
 
 ### Features
@@ -38,7 +38,7 @@ Or clone directly from GitHub: [https://github.com/saphero/sphero-hack](https://
 
 ### Game Controller
 - Install the [Firefox Nightly](https://nightly.mozilla.org/) browser
-- Launch app from command line by typing ```saphero```
+- Launch app from command line by typing ```saphero``` (use ```npm start``` if cloned from GitHub)
 - Follow app instructions to connect device
 - Plugin a game controller via USB (currently supports PlayStation controllers only)
 - Control your device one the ```/move``` page:

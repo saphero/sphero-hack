@@ -1,5 +1,6 @@
 'use strict';
 /* global io swal */
+/* eslint-disable prefer-arrow-callback */
 
 var socket = io.connect('http://localhost:3000');
 var idleTimeout;

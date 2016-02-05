@@ -1,18 +1,21 @@
 'use strict';
 var start = false;
 module.exports = exports = (orb) => {
-  orb.color('purple');
-
   orb.streamVelocity();
 
-  orb.on('velocity', (data) => {
-    if (data.xVelocity.value[0] > 100 || data.yVelocity.value[0] > 100) {
-      start = true;
-    } else if (start) {
-      predict();
-      start = false;
+
+  var magic8 = {
+    velocity: (data) => {
+      if (data.xVelocity.value[0] > 100 || data.yVelocity.value[0] > 100) {
+        start = true;
+      } else if (start) {
+        predict();
+        start = false;
+      }
     }
-  });
+  };
+
+  orb.on('velocity', magic8.velocity);
 
   function predict() {
     var number = Math.random() * 3;
@@ -24,4 +27,6 @@ module.exports = exports = (orb) => {
     }
     return orb.color('red');
   }
+
+  return magic8;
 };

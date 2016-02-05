@@ -14,23 +14,18 @@ exports.rainbow = (orb) => {
   return setInterval(() => {
     nextRainbow();
     orb.color({ red: r, green: g, blue: b });
-  }, 100);
+  }, 250);
 };
 
 exports.xmas = (orb) => {
   var count = 0;
-  orb.color('red');
   return setInterval(() => {
-    if (count === 0) {
+    if (count % 2) {
       orb.color('green');
-      count = 1;
-      return count;
-    }
-    if (count === 1) {
+    } else {
       orb.color('red');
-      count = 0;
-      return count;
     }
+    count++;
   }, 1000);
 };
 
