@@ -5,9 +5,6 @@ module.exports = exports = (orb) => {
     orb.color('teal');
 
     orb.on('collision', (data) => {
-      console.log('collision detected');
-      console.log('  data:', data);
-
       orb.color('red');
 
       setTimeout(() => {
