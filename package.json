@@ -1,6 +1,6 @@
 {
   "name": "saphero",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Client-Side Dashboard to Easily Connect and Control Sphero/BB-8/Ollie Devices",
   "main": "bin/index.js",
   "scripts": {
