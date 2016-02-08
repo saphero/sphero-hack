@@ -12,7 +12,7 @@ A [Code Fellows](https://www.codefellows.org/) 401 Project by [Natalie Chow](htt
 - For Sphero 1.0/2.0/SPRK models: Bluetooth Classic (Bluetooth 2.0/3.0) enabled computer
 - For BB-8/Ollie models: Bluetooth Low Energy (Bluetooth LE/Bluetooth Smart/Bluetooth 4.0/4.1) enabled computer
 - Currently only Mac (OS X) platform compatible
-- [Xcode](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12)
+- [Xcode 7](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12)
 - A [Sphero 1.0/2.0](http://www.sphero.com/sphero), [SPRK](http://www.sphero.com/education), [BB-8](http://www.sphero.com/starwars) or [Ollie](http://www.sphero.com/ollie)
 
 ### Installation
@@ -20,7 +20,12 @@ Download from npm:
 ```
 npm install saphero
 ```
-Or clone directly from GitHub: [https://github.com/saphero/sphero-hack](https://github.com/saphero/sphero-hack)
+Or clone directly from GitHub: [https://github.com/saphero/sphero-hack](https://github.com/saphero/sphero-hack).
+
+If you clone from github you will need to run the following command before launching:
+```
+gulp sass
+```
 
 ### Getting Started
 - Pair Sphero or SPRK via Bluetooth (found in System Preferences > Bluetooth - but first ensure Sphero/SPRK is not connected to any another device); you do not need to pair BB-8 or Ollie devices
