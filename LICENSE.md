@@ -9,9 +9,10 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#### Other Projects Used:
+#### Other Projects/External Libraries Used:
 Saphero uses code from other projects/external libraries which have their own licenses:
 - [express](https://www.npmjs.com/package/express)
+- [flot](https://www.npmjs.com/package/flot)
 - [home-config](https://www.npmjs.com/package/home-config)
 - [jade](https://www.npmjs.com/package/jade)
 - [lodash](https://www.npmjs.com/package/lodash)
@@ -20,3 +21,4 @@ Saphero uses code from other projects/external libraries which have their own li
 - [serialport](https://www.npmjs.com/package/serialport)
 - [socket.io](https://www.npmjs.com/package/socket.io)
 - [sphero](https://www.npmjs.com/package/sphero)
+- [sweetalert](https://www.npmjs.com/package/sweetalert)

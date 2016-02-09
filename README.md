@@ -4,8 +4,6 @@
 
 ### _Client-Side Dashboard to Easily Connect and Control Sphero/BB-8/Ollie Devices_
 
-A [Code Fellows](https://www.codefellows.org/) 401 Project by [Natalie Chow](https://github.com/xxnatc), [Sabrina Tee](https://github.com/sabbyt/), [Logan Tegman](https://github.com/ltegman), [Jose Tello](https://github.com/josectello) and [Jesse Thach](https://github.com/jessethach).
-
 ![Control Page](/public/img/setup-screenshot.png)
 
 ### Minimum Requirements
@@ -22,7 +20,10 @@ npm install saphero
 ```
 Or clone directly from GitHub: [https://github.com/saphero/sphero-hack](https://github.com/saphero/sphero-hack).
 
-If you clone from github you will need to run the following command before launching:
+If you clone from GitHub you will need to run the following commands before launching:
+```
+npm install
+```
 ```
 gulp sass
 ```
@@ -67,6 +68,7 @@ localhost:3000
 
 ### Acknowledgements & Modules Used
 - [express](https://www.npmjs.com/package/express)
+- [flot](https://www.npmjs.com/package/flot)
 - [home-config](https://www.npmjs.com/package/home-config)
 - [jade](https://www.npmjs.com/package/jade)
 - [lodash](https://www.npmjs.com/package/lodash)
@@ -75,6 +77,7 @@ localhost:3000
 - [serialport](https://www.npmjs.com/package/serialport)
 - [socket.io](https://www.npmjs.com/package/socket.io)
 - [sphero](https://www.npmjs.com/package/sphero)
+- [sweetalert](https://www.npmjs.com/package/sweetalert)
 
 ### Issues? Suggestions? Comments?
 Submit an issue on [GitHub](https://github.com/saphero/sphero-hack/issues).
