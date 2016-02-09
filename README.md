@@ -20,7 +20,10 @@ npm install saphero
 ```
 Or clone directly from GitHub: [https://github.com/saphero/sphero-hack](https://github.com/saphero/sphero-hack).
 
-If you clone from GitHub you will need to run the following command before launching:
+If you clone from GitHub you will need to run the following commands before launching:
+```
+npm install
+```
 ```
 gulp sass
 ```
