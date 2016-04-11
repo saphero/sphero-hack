@@ -25,12 +25,29 @@
     "ollie",
     "sprk"
   ],
-  "author": { "name": "Sabrina Tee", "email": "sabrinatee@me.com" },
+  "author": {
+    "name": "Sabrina Tee",
+    "email": "sabrinatee@me.com"
+  },
   "contributors": [
-    { "name": "Natalie Chow", "email": "cychownat@gmail.com" },
-    { "name": "Logan Tegman", "email": "ltegman@gmail.com", "url": "http://logantegman.io" },
-    { "name": "Jose Tello", "email": "josectello@gmail.com" },
-    { "name": "Jesse Thach", "email": "jessethach@gmail.com", "url": "https://about.me/jessethach"}
+    {
+      "name": "Natalie Chow",
+      "email": "cychownat@gmail.com"
+    },
+    {
+      "name": "Logan Tegman",
+      "email": "ltegman@gmail.com",
+      "url": "http://logantegman.io"
+    },
+    {
+      "name": "Jose Tello",
+      "email": "josectello@gmail.com"
+    },
+    {
+      "name": "Jesse Thach",
+      "email": "jessethach@gmail.com",
+      "url": "https://about.me/jessethach"
+    }
   ],
   "license": "MIT",
   "bugs": {
@@ -51,8 +68,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
+    "eslint": "^2.7.0",
     "gulp": "^3.9.0",
-    "gulp-eslint": "^1.1.1",
+    "gulp-eslint": "^2.0.0",
     "gulp-istanbul": "^0.10.3",
     "gulp-mocha": "^2.2.0",
     "gulp-sass": "^2.1.1",
