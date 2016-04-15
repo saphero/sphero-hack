@@ -1,10 +1,22 @@
 {
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
   "env": {
     "browser": true,
     "mocha": true,
     "node": true,
     "es6": true
   },
+  "plugins": [
+    "react",
+    "babel"
+  ],
   "globals": {
     "window": true,
     "$": true,
@@ -24,7 +36,7 @@
     "no-empty-character-class": 2,
     "no-ex-assign": 2,
     "no-extra-boolean-cast": 2,
-    "no-extra-parens": 1,
+    "no-extra-parens": 0,
     "no-extra-semi": 2,
     "no-func-assign": 2,
     "no-inner-declarations": 2,
@@ -41,7 +53,7 @@
 
     "block-scoped-var": 0,
     "complexity": 0,
-    "consistent-return": 2,
+    "consistent-return": 0,
     "curly": [2, "multi-line"],
     "default-case": 1,
     "dot-notation": 1,
@@ -73,7 +85,7 @@
     "no-process-env": 0,
     "no-proto": 2,
     "no-redeclare": 1,
-    "no-return-assign": 0,
+    "no-return-assign": 2,
     "no-script-url": 2,
     "no-self-compare": 2,
     "no-sequences": 2,
@@ -93,9 +105,6 @@
     "vars-on-top": 0,
     "wrap-iife": [2, "any"],
     "yoda": 1,
-
-    "strict": [2, "global"],
-
     "no-catch-shadow": 2,
     "no-delete-var": 2,
     "no-label-var": 2,
@@ -113,7 +122,7 @@
     "no-path-concat": 0,
     "no-process-exit": 0,
     "no-restricted-modules": 0,
-    "no-sync": 1,
+    "no-sync": 0,
 
     "brace-style": [
       2,
@@ -143,7 +152,10 @@
       }
     ],
     "max-nested-callbacks": 0,
-    "new-cap": [2, { "capIsNewExceptions": ["Server"] }],
+    "new-cap": [
+      1,
+      {"capIsNewExceptions": ["Router", "Server"]}
+    ],
     "new-parens": 2,
     "no-array-constructor": 2,
     "no-inline-comments": 1,
@@ -175,7 +187,6 @@
       "always"
     ],
     "sort-vars": 0,
-    "keyword-spacing": 2,
     "space-before-function-paren": [
       2,
       "never"
@@ -210,6 +221,7 @@
     "max-statements": 0,
     "no-bitwise": 1,
     "no-plusplus": 0,
+    "keyword-spacing": 2,
     "arrow-spacing": 2,
     "constructor-super": 2,
     "no-const-assign": 2,
@@ -218,9 +230,20 @@
       2,
       { "defaultAssignment": false }
     ],
-    "arrow-parens": [
-      2,
-      "always"
-    ]
+
+    "react/display-name": 1,
+    "react/jsx-boolean-value": [1, "always"],
+    "jsx-quotes": [1, "prefer-single"],
+    "react/jsx-no-undef": 1,
+    "react/jsx-sort-props": [0, { "ignoreCase": true }],
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/no-did-mount-set-state": 2,
+    "react/no-did-update-set-state": 2,
+    "react/no-multi-comp": [2, { "ignoreStateless": true } ],
+    "react/prop-types": 2,
+    "react/react-in-jsx-scope": 1,
+    "react/self-closing-comp": 1,
+    "react/wrap-multilines": 1
   }
 }

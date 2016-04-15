@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Connect",
+    "url": "/",
+    "icon": "static/img/icons/bluetooth.svg"
+  },
+  {
+    "name": "Move",
+    "url": "/move",
+    "icon": "static/img/icons/controller.svg"
+  },
+  {
+    "name": "Color",
+    "url": "/color",
+    "icon": "static/img/icons/dropper.svg"
+  },
+  {
+    "name": "Presets",
+    "url": "/presets",
+    "icon": "static/img/icons/book.svg"
+  },
+  {
+    "name": "About",
+    "url": "/about",
+    "icon": "static/img/icons/about.svg"
+  }
+]

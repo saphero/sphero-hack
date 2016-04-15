@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Natalie Chow",
+    "image": "static/img/natalie.jpg"
+  },
+  {
+    "name": "Sabrina Tee",
+    "image": "static/img/sabrina.jpg"
+  },
+  {
+    "name": "Logan Tegman",
+    "image": "static/img/logan.jpg"
+  },
+  {
+    "name": "Jose Tello",
+    "image": "static/img/jose.jpg"
+  },
+  {
+    "name": "Jesse Thach",
+    "image": "static/img/jesse.jpg"
+  }
+]
