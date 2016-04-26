@@ -50,7 +50,7 @@ function highlightBtn(btnId) {
 }
 
 socket.on('speedometer', (data) => {
-  $.plot($('#speed_graph'), data, {
+  $.plot($('#speed-graph'), data, {
     yaxis: {
       min: 0
     },
@@ -61,7 +61,7 @@ socket.on('speedometer', (data) => {
 });
 
 socket.on('accelerometer', (data) => {
-  $.plot($('#accel_graph'), data, {
+  $.plot($('#accel-graph'), data, {
     yaxis: {
       min: -2500,
       max: 2500
