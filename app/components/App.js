@@ -4,14 +4,17 @@ import SapheroNav from './Nav';
 export default class App extends Component {
 
   static propTypes = {
-    children: PropTypes.arrayOf(PropTypes.node)
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
+    ])
   }
 
   render() {
     return (
       <div>
         <SapheroNav />
-        { this.props.children }
+        {this.props.children}
       </div>
     );
   }

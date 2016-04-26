@@ -233,7 +233,7 @@
 
     "react/display-name": 1,
     "react/jsx-boolean-value": [1, "always"],
-    "jsx-quotes": [1, "prefer-single"],
+    "jsx-quotes": [1, "prefer-double"],
     "react/jsx-no-undef": 1,
     "react/jsx-sort-props": [0, { "ignoreCase": true }],
     "react/jsx-uses-react": 1,
