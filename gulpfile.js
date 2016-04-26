@@ -7,12 +7,13 @@ const sass = require('gulp-sass');
 const istanbul = require('gulp-istanbul');
 const maps = require('gulp-sourcemaps');
 const webpack = require('webpack-stream');
+const watch = require('gulp-watch');
 
 const scripts = ['index.js', 'gulpfile.js', 'lib/*.js', 'test/*.spec.js',
-  'public/js/*.js', 'commands/*.js', 'app/**/*.jsx?', '!node_modules/**'];
+  'public/js/*.js', 'commands/*.js', 'app/**/*.js(x)?', '!node_modules/**'];
 const serverScripts = ['index.js', 'lib/*.js', 'test/*.spec.js',
   'commands/*.js', '!node_modules/**'];
-const clientScripts = ['app/**/*.jsx?'];
+const clientScripts = ['app/**/*.js', 'app/**/*.js(x)?'];
 const staticFiles = ['app/**/*.html'];
 
 gulp.task('lint', () => {
@@ -45,7 +46,10 @@ gulp.task('build:dev', () => {
         {
           test: /\.jsx?$/,
           exclude: /node_modules/,
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          query: {
+            cacheDirectory: true
+          }
         },
         {
           test: /\.json$/,
