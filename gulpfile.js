@@ -13,7 +13,7 @@ const scripts = ['index.js', 'gulpfile.js', 'lib/*.js', 'test/*.spec.js',
   'public/js/*.js', 'commands/*.js', 'app/**/*.js(x)?', '!node_modules/**'];
 const serverScripts = ['index.js', 'lib/*.js', 'test/*.spec.js',
   'commands/*.js', '!node_modules/**'];
-const clientScripts = ['app/**/*.js', 'app/**/*.js(x)?'];
+const clientScripts = ['app/**/*.js', 'app/**/*.jsx'];
 const staticFiles = ['app/**/*.html'];
 
 gulp.task('lint', () => {

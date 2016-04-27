@@ -17,8 +17,8 @@ export default class Connect extends Component {
           <Button id="connect-btn-bb8" className="shading">BB-8/Ollie</Button>
           </Col>
           <Col sm={6} md={4} className="connect-panel">
-            <img src="static/img/bb8.svg" />
-          <Button id="connect-btn-sprk" className="shading">BB-8/Ollie</Button>
+            <img src="static/img/sprk.svg" />
+          <Button id="connect-btn-sprk" className="shading">Sphero/SPRK</Button>
           </Col>
         </Row>
         <Row>
